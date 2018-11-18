@@ -51,7 +51,7 @@
 	</tx:advice>
 	<aop:config>
 		<aop:advisor advice-ref="txAdvice"
-			pointcut="execution(* com.erp.service..*.*(..))" />
+			pointcut="execution(* com.zcup.service..*.*(..))" />
 	</aop:config>
 	
 	<import resource="classpath:applicationContext-dao.xml" />

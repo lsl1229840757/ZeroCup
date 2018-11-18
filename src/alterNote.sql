@@ -1,0 +1,2 @@
+ALTER TABLE `zerocup`.`note` 
+ADD COLUMN `CONTENT` TEXT NULL AFTER `POI`;
