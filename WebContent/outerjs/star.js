@@ -88,7 +88,7 @@ for (var i = 0; i < maxStars; i++) {
 
 function animation() {
   ctx.globalCompositeOperation = 'source-over';
-  ctx.globalAlpha = 0.5;
+  ctx.globalAlpha = 1;
   ctx.fillStyle = "#ffdede";
   ctx.fillRect(0, 0, w, h);
 

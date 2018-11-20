@@ -1,5 +1,4 @@
 $(function(){var canvas = document.getElementById("mouseCanvas");
-alert( canvas);
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 c = canvas.getContext('2d');
@@ -9,19 +8,9 @@ window.addEventListener('mousemove',
 		    mouse.y = event.y;
 		    drawCircles();
 		});
-		 
-		window.addEventListener("touchmove",
-		function (event) {
-		    var touch = event.touches[0];
-		    mouse.x = touch.clientX;
-		    mouse.y = touch.clientY;
-		    drawCircles();
-		});
-		 
 		window.addEventListener('resize', function () {
 		    canvas.height = window.innerHeight;
 		    canvas.width = window.innerWidth;
-		 
 		    initCanvas();
 		});
 		 
