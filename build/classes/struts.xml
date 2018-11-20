@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 这里是开发者模式，以后需要false -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 配置国际化资源文件的参数 ,这个属性在default。properties中可以找到-->
+	<constant name="struts.custom.i18n.resources" value="com/zcup/resource/msg"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	 
+	 
+	<package name="root" extends="struts-default" namespace="/">
+		<action name="i18n" class="i18nTestAction" method="changeContext">
+			<result name="success">/i18nTest.jsp</result>
+		</action>
+		<action name="i18n2" class="i18nTestAction" method="changeContext">
+			<result name="success">/i18nTest2.jsp</result>
+		</action>
+	</package>
+	
+	
+</struts>	

@@ -1,5 +1,4 @@
 $(function(){var canvas = document.getElementById("mouseCanvas");
-alert( canvas);
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 c = canvas.getContext('2d');
