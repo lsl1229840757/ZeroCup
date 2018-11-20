@@ -88,7 +88,7 @@ for (var i = 0; i < maxStars; i++) {
 
 function animation() {
   ctx.globalCompositeOperation = 'source-over';
-  ctx.globalAlpha = 0.5;
+  ctx.globalAlpha = 1;
   ctx.fillStyle = "#ffdede";
   ctx.fillRect(0, 0, w, h);
 
@@ -101,3 +101,8 @@ function animation() {
 }
 
 animation();
+$('.navMenu-item').click(function() {
+	idx = $(this).index('.navMenu-item');
+	$('.navMenu-item').find('.active').removeClass('active');
+	$(this).find('span').addClass('active');
+});

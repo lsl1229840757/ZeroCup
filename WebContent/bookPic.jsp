@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="tags.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>电子相册</title>
-<script type="text/javascript" src="outerjs/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="outerjs/modernizr.2.5.3.min.js"></script>
+<script src="outerjs/stopExecutionOnTimeout.js" type="text/javascript"></script>
+<script src="outerjs/mouse.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
 	function loadApp() {
@@ -47,6 +48,7 @@ $(function(){
 </script>
 </head>
 <body>
+
 <div class="flipbook-viewport">
 	<div class="container">
 		<div class="flipbook">
@@ -63,5 +65,6 @@ $(function(){
 		</div>
 	</div>
 </div>
+<canvas id="mouseCanvas"></canvas>
 </body>
 </html>

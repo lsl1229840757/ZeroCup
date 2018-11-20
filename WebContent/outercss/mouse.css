@@ -1,7 +1,0 @@
-@CHARSET "UTF-8";
-canvas{
-  margin: 0;
-  padding: 0;
-  display: block; 
-  touch-action: none; 
-}
