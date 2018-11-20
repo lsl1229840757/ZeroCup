@@ -9,20 +9,29 @@
 }
 
 #navMenu {
-	background: rgb(175, 140, 115);
-	border-bottom: 1px solid #EFEBE8;
-	border-top: 1px solid #EFEBE8;
+	margin-bottom:3px;
 	position: relative;
+	margin-left: 140px;
+}
+
+#logo {
+	width: 200px;
+	float: left;
+	margin-top: 10px;
+}
+
+#logo img {
+	max-width: 100%;
+	height: auto;
 }
 
 #navMenu #navMenu-wrapper {
-	overflow: hidden;
 	height: 60px;
 	padding: 0 30px;
 }
 
 #navMenu-items {
-	margin: 0 20px;
+	margin: 0 auto;
 	padding: 1px 0;
 	list-style: none;
 	white-space: nowrap;
@@ -38,28 +47,80 @@
 	height: 0;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
-	border-top: 6px solid #EFEBE8;
+	border-top: 6px solid #b83a3a;
 }
 
 #navMenu ul li {
 	display: inline-block;
 	margin: 16px 40px;
-	margin-left: 100px;
+	margin-left: 50px;
 }
 
 .item {
 	cursor: pointer;
 	font-size: 21px;
 	font-family: navFont;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	box-sizing: content-box;
+	border: 1px solid #444;
+	border-left-color: #000;
+	border-radius: 5px 5px 5px 5px;
+	display: block;
+	width: 100px;
+	text-align: center;
 }
 
-.item:hover{
-	color:steelblue;
+.active, .item:hover {
+	outline: none;
+	-webkit-animation: glow 2000ms ease-out infinite alternate;
+	-moz-animation: glow 2000ms ease-out infinite alternate;
+	-o-animation: glow 2000ms ease-out infinite alternate;
+	-ms-animation: glow 2000ms ease-out infinite alternate;
+	animation: glow 2000ms ease-out infinite alternate;
+	background: -webkit-linear-gradient(#f0d9da, #f0d9da);
+	background: -moz-linear-gradient(#f0d9da, #f0d9da);
+	background: -o-linear-gradient(#f0d9da, #f0d9da);
+	background: -ms-linear-gradient(#f0d9da, #f0d9da);
+	background: linear-gradient(#f0d9da, #f0d9da);
+	border-color: #fbeed7;
+	box-shadow: 0 0 5px rgba(0, 255, 0, .5), inset 0 0 5px
+		rgba(0, 255, 0, .5), 0 2px 0 #ffc2e9;
+	color: #43c0ac;
 }
 
 #login {
 	font-size: 18px;
 }
-.slide{
-	background-image: url(../images/a.jpg);
+
+.slide {
+	width: 1400px;
+	margin: 0 auto;
+}
+
+.slide img {
+	max-width: 100%;
+	height: auto;
+}
+
+.slide .circle {
+	width: 15px;  
+    height: 15px;  
+    border-radius: 50%;
+    background:white;  
+    border: 1px solid steelblue;  
+	position: absolute; 
+	z-index: 1; 
+	margin-top:530px;
+	cursor: pointer;
+}
+.slide .hit{
+	background: red;
+}
+canvas{
+	width:100%;
+	z-index:-1;
+	position: absolute;
 }
