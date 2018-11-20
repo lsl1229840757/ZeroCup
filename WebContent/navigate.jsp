@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>导航界面</title>
-<script src='outerjs/jquery-ui.min.js'></script>
-<link rel="stylesheet" type="text/css" href="mycss/style.css">
+<script src='${path }/outerjs/jquery-ui.min.js'></script>
+<link rel="stylesheet" type="text/css" href="${path }/mycss/style.css">
 </head>
 <body>  
 <canvas id="canvas"></canvas>  
@@ -48,7 +48,7 @@
 		<img alt="" src="images/img1.jpg">
 	</div>
 </div>
-<script src='myjs/index.js'></script>
-<script type="text/javascript" src="outerjs/star.js"></script>
+<script src='${path }/myjs/index.js'></script>
+<script type="text/javascript" src="${path }/outerjs/star.js"></script>
 </body>
 </html>

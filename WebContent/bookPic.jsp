@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>电子相册</title>
-<script src="outerjs/stopExecutionOnTimeout.js" type="text/javascript"></script>
-<script src="outerjs/mouse.js" type="text/javascript"></script>
+<script src="${path }/outerjs/stopExecutionOnTimeout.js" type="text/javascript"></script>
+<script src="${path }/outerjs/mouse.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
 	function loadApp() {
