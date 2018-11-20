@@ -101,8 +101,3 @@ function animation() {
 }
 
 animation();
-$('.navMenu-item').click(function() {
-	idx = $(this).index('.navMenu-item');
-	$('.navMenu-item').find('.active').removeClass('active');
-	$(this).find('span').addClass('active');
-});
