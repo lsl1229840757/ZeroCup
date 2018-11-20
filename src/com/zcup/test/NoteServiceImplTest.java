@@ -39,4 +39,14 @@ public class NoteServiceImplTest {
 		
 	}
 
+	@Test
+	public void testSaveNoteAndPoi() {
+		Note n = new Note();
+		n.setContent("牌坊");
+		n.setTitle("标题");
+		n.setLatitude(36);
+		n.setLongitude(114);
+		noteService.saveNote(n, 2);
+	}
+
 }

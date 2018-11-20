@@ -8,5 +8,6 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 <bean class="com.zcup.action.I18nTestAction" id="i18nTestAction" scope="prototype"></bean>
-
+<bean id="noteAction" class="com.zcup.action.NoteAction" scope="prototype"></bean>
+<bean id="poiAction" class="com.zcup.action.PoiAction" scope="prototype"></bean>
 </beans>
