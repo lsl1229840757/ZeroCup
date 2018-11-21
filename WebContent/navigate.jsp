@@ -49,8 +49,8 @@
 		<div class="circle" style="margin-left:80px;"></div>
 	</div>
 </div>
-<script src="myjs/index.js"></script>
-<script src="myjs/index.js"></script>
-<script type="text/javascript" src="outerjs/star.js"></script>
+<script src="${path }/myjs/index.js"></script>
+<script src="${path }/myjs/index.js"></script>
+<script type="${path }/text/javascript" src="outerjs/star.js"></script>
 </body>
 </html>
