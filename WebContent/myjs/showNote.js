@@ -64,4 +64,118 @@ require([
          		  zoom:15
          		}, opts);
        	});
+       	//初始化所有poi
+       	ajax_showAllPois();
+       	
+       	
+       	/**
+       	 * 
+       	 * 定义一些函数
+       	 * 
+       	 */
+      //传入一个poi的jsonObject
+    	function showPoi(poi){
+    			var point = {
+    		        type: "point", 
+    		        x: poi.longitude,
+    		        y: poi.latitude,
+    		      };
+    			alert(poi.longitude);
+    			alert(poi.latitude);
+    			var col =  colorarray[Math.floor(Math.random()*11)];
+    		    var markerSymbol = {
+    		    	//这里以后设置大小
+    		        type: "simple-marker", 
+    		        color:col,
+    		        outline: { 
+    		          color:col,
+    		          width: 0.1
+    		        },
+    		      size:Math.random()*15+5//15-30
+    		      };
+
+    		      //类似于Map
+    		    var attribute = {
+    		    		  描述: poi.description,
+    		      };
+    		 /* 
+    		  * 添加template的action
+    		  * 
+    		  * var go = {
+    		        title: "查看详情",
+    		        id: "goIt",
+    		        url:[news.webUrl,news.mobileUrl]
+    		      };*/
+    		    var template = {
+    		    		title: "<p align = 'center'><b>"+poi.name+"</b></p>",
+    		            content: [{
+    		              type: "fields",
+    		              fieldInfos: [{
+    		                fieldName: "描述"
+    		              }
+    		              ]
+    		            },{
+    		            	type:"text",
+    		            	title:"预览图片"
+    		            },{
+    		             type: "media",
+    		            mediaInfos: [{
+    		              type: "image",
+    		           value: {
+    	                sourceURL: path+poi.url
+    		           	}
+    		            }]
+    		           }],
+    		        //actions: [go]
+    		      };
+    		    var pointGraphic = new Graphic({
+    		        geometry: point,
+    		        symbol: markerSymbol,
+    		        attributes:attribute,
+    		        popupTemplate:template
+    		      });
+    		    graphicsLayer.add(pointGraphic);
+    	}
+    	
+    	/**
+    	 * 
+    	 * 第一次展示所有的Poi信息以及相关的评论信息
+    	 * 
+    	 */
+    	function ajax_showAllPois(){
+    		$.ajax({
+    	  		method : "POST",
+    	  		timeout : 5000,
+    	  		url : path+"/ajax_showAllPois",
+    	  		data :"now="+new Date().getTime(), // 防止缓存问题
+    	  		dataType : "json",
+    	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
+    	  		async:false,
+    	  		success : function(data) {
+    	  			//这里的数据是jsonArray
+    	  			for(var i=0;i<data.length;i++){
+    	  				showPoi(data[i]);
+    	  			}
+    	  		/*	
+    	  		 * ，给template添加事件
+    	  		 * var popup = view.popup;
+    	  			 popup.on("trigger-action", function(event) {
+    	 		        if (event.action.id === "goIt") {
+    	 		        	if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    	 		        	   window.open(event.action.url[1]);
+    	 		        	} else {
+    	 		        		window.open(event.action.url[0]);
+    	 		        	}
+    	 		        }
+    	 		      });*/
+    	  		},
+    	  		error : function() {
+    	  			alert("error");
+    	  		}
+    	  	});
+    	}
+
 });
+
+
+

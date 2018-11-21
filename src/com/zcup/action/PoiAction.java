@@ -22,7 +22,7 @@ public class PoiAction extends HttpBaseAction {
 	 * ajax加载所有poi以及其notes相关信息
 	 * @throws IOException
 	 */
-	public void ajax_showPoi() throws IOException {
+	public void ajax_showAllPois() throws IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		List<Poi> list = poiService.list();
