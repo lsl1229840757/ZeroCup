@@ -15,7 +15,7 @@
 #navMenu {
 	margin-bottom:3px;
 	position: relative;
-	margin-left: 140px;
+	margin-left: 10%;
 }
 
 .header{
@@ -107,7 +107,7 @@
 }
 
 .slide {
-	width: 1400px;
+	width: 80%;
 	overflow: hidden;
 	margin: 0 auto;
 }
