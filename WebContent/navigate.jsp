@@ -10,9 +10,10 @@
 <link rel="stylesheet" type="text/css" href="mycss/style.css">
 </head>
 <body>  
-<canvas id="canvas"></canvas>  
 <div class="container-fluid">  
-	<div class="header"></div>                                                                   
+	<div class="header">
+		<img alt="" src="images/head.png">
+	</div>                                                                   
 	<div id="navMenu">
 	    <div id="navMenu-wrapper">
 	    	<div id="logo">
@@ -42,13 +43,12 @@
 		</div>
 	</div>
 	<div class="slide">
+		<img alt="" src="images/img1.jpg">
 		<div class="circle hit" style="margin-left:20px;"></div>
 		<div class="circle" style="margin-left:50px;"></div>
 		<div class="circle" style="margin-left:80px;"></div>
-		<img alt="" src="images/img1.jpg">
 	</div>
 </div>
 <script src='myjs/index.js'></script>
-<script type="text/javascript" src="outerjs/star.js"></script>
 </body>
 </html>
