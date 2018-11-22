@@ -30,8 +30,8 @@ public class PoiServiceImplTest {
 		Note n = new Note();
 		n.setContent("关联");
 		n.setTitle("关联poi的note");
-		n.setLatitude(36);
-		n.setLongitude(114);
+		n.setLatitude(36d);
+		n.setLongitude(114d);
 		sets.add(n);
 		p.setNotes(sets);
 		p.setName("武大");

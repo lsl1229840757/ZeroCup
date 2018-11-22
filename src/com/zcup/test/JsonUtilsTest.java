@@ -21,8 +21,8 @@ public class JsonUtilsTest {
 		Note n = new Note();
 		n.setContent("牌坊");
 		n.setTitle("标题");
-		n.setLatitude(36);
-		n.setLongitude(114);
+		n.setLatitude(36d);
+		n.setLongitude(114d);
 		User u = new User();
 		u.setAge(1);
 		n.setUser(u);

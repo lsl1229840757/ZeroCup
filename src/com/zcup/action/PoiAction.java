@@ -26,6 +26,7 @@ public class PoiAction extends HttpBaseAction {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		List<Poi> list = poiService.list();
+		System.out.println(list);
 		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] {"notes"}); // 先排除notes的集合对象
 		for (int i = 0; i < array.size(); i++) {
 			JSONObject jb = array.getJSONObject(i); // 获得每一个poiJSon
@@ -37,6 +38,7 @@ public class PoiAction extends HttpBaseAction {
 				jsonObject.put("user",((Note)notes.toArray()[j]).getUser().getName());
 			}
 			jb.put("notes", array2);
+			System.out.println(jb.toString());
 		}
 		response.getWriter().write(array.toString());
 	}

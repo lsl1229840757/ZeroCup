@@ -15,6 +15,7 @@
 <script type="text/javascript" src="${path }/outerjs/jquery-3.3.1.js"></script>
 <script type="text/javascript"
 	src="${path }/outerjs/modernizr.2.5.3.min.js"></script>
+<script src="${path }/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 </html>
