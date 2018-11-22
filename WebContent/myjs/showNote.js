@@ -1,16 +1,16 @@
-var colorarray = [[35,205,182,0.5],[142,229,213,0.5],[148,251,240,0.5],[192,247,252,0.5],[172,248,211,0.5],[230,228 ,192,0.5],[231,202,127,0.5],[255,215,187,0.5],[255,179,168,0.5],[255,76,108,0.5]]
+var colorarray = [[0,0,0,1]]
 function formatDate(time,format='YY-MM-DD hh:mm'){
     var date = new Date(time);
 
     var year = date.getFullYear(),
-        month = date.getMonth()+1,//月份是从0开始的
+        month = date.getMonth()+1,// 月份是从0开始的
         day = date.getDate(),
         hour = date.getHours(),
         min = date.getMinutes(),
         sec = date.getSeconds();
     var preArr = Array.apply(null,Array(10)).map(function(elem, index) {
         return '0'+index;
-    });////开个长度为10的数组 格式为 00 01 02 03
+    });// //开个长度为10的数组 格式为 00 01 02 03
 
     var newTime = format.replace(/YY/g,year)
                         .replace(/MM/g,preArr[month]||month)
@@ -54,58 +54,53 @@ require([
        		  target: [114.35324042896691,30.535762797065825],
        		  zoom:18
        		}, opts);
-       		/*view.on("click", function(e) {
-       		        alert(e.mapPoint.latitude);
-       		        alert(e.mapPoint.longitude);
-       		});*/
+       		/*
+			 * view.on("click", function(e) { alert(e.mapPoint.latitude);
+			 * alert(e.mapPoint.longitude); });
+			 */
+       		var opts2 = {
+	           		  duration: 2000,
+	           		};
        	$("#goback").click(function(){
        		view.goTo({
          		  target: [114.35324042896691,30.535762797065825],
          		  zoom:15
-         		}, opts);
+         		}, opts2);
        	});
-       	//初始化所有poi
-       	ajax_showAllPois();
-       	
+       	// 初始化所有poi
+       	ajax_showAllPois(0);
        	
        	/**
-       	 * 
-       	 * 定义一些函数
-       	 * 
-       	 */
-      //传入一个poi的jsonObject
+		 * 
+		 * 定义一些函数
+		 * 
+		 */
+      // 传入一个poi的jsonObject
     	function showPoi(poi){
     			var point = {
     		        type: "point", 
     		        x: poi.longitude,
     		        y: poi.latitude,
     		      };
-    			alert(poi.longitude);
-    			alert(poi.latitude);
     			var col =  colorarray[Math.floor(Math.random()*11)];
     		    var markerSymbol = {
-    		    	//这里以后设置大小
+    		    	// 这里以后设置大小
     		        type: "simple-marker", 
     		        color:col,
     		        outline: { 
     		          color:col,
     		          width: 0.1
     		        },
-    		      size:Math.random()*15+5//15-30
+    		      size:Math.random()*15+5// 15-30
     		      };
 
-    		      //类似于Map
+    		      // 类似于Map
     		    var attribute = {
     		    		  描述: poi.description,
+    		    		  留言: poi.notes[0].content
     		      };
-    		 /* 
-    		  * 添加template的action
-    		  * 
-    		  * var go = {
-    		        title: "查看详情",
-    		        id: "goIt",
-    		        url:[news.webUrl,news.mobileUrl]
-    		      };*/
+				// 添加template的action
+				var go = { title: "评论", id: "goIt"};
     		    var template = {
     		    		title: "<p align = 'center'><b>"+poi.name+"</b></p>",
     		            content: [{
@@ -116,7 +111,8 @@ require([
     		              ]
     		            },{
     		            	type:"text",
-    		            	title:"预览图片"
+    		            	// 可以使用html语句修饰
+    		            	text:"<b>预览图片</b>"
     		            },{
     		             type: "media",
     		            mediaInfos: [{
@@ -125,9 +121,37 @@ require([
     	                sourceURL: path+poi.url
     		           	}
     		            }]
-    		           }],
-    		        //actions: [go]
+    		           },
+    		           {
+	   		            	type:"text",
+	   		            	text:setContent(poi)
+   		            	},
+    		           {
+	   		            	type:"text",
+	   		            	text:setBtn()
+  		            	}
+    		           ],
     		      };
+    		    function setContent(poi){
+    		    	var sum = "";
+    		    	for(var i=0;i<poi.notes.length;i++){
+    		    		var comment = "<div class='comment' style='height: 40%;width: 70%;background-color: red;'>"+poi.notes[i].title+"</div>";
+        		    	var name = "<div class='username' style='height: 20%;width: 30%;background-color: black;'>"+poi.notes[i].user+"</div>";
+        		    	sum+=("<div class='commentInfo'>"+comment+name+"</div>");
+    		    	}
+    		    	return sum;
+    		    }
+    		    function setBtn(){
+    		    	var btn = "<button class='btn btn-primary' id='mybtn' type='button' " +
+    		    			"data-toggle='collapse' data-target='#collapseExample' " +
+    		    			"aria-expanded='false' aria-controls='collapseExample'>" +
+    		    			"评论</button>" +
+    		    			"<div class='collapse' id='collapseExample'>" +
+    		    			"<textArea class='well'></textArea><button class='btn btn-success' id='refresh'>提交" +
+    		    			"</button></div>" +
+    		    			"<script type='text/javascript'>alert(5)</script>";
+    		    	return btn;
+    		    }
     		    var pointGraphic = new Graphic({
     		        geometry: point,
     		        symbol: markerSymbol,
@@ -135,14 +159,26 @@ require([
     		        popupTemplate:template
     		      });
     		    graphicsLayer.add(pointGraphic);
+    		    
+    	}
+    	
+    	
+    	function refresh(){
+    		var flag = 1;
+    		ajax_showAllPois(flag);
     	}
     	
     	/**
-    	 * 
-    	 * 第一次展示所有的Poi信息以及相关的评论信息
-    	 * 
-    	 */
-    	function ajax_showAllPois(){
+		 * 
+		 * 第一次展示所有的Poi信息以及相关的评论信息
+		 * 
+		 */
+    	function ajax_showAllPois(flag){
+    		if(flag==1){
+    			map.removeAll();
+    			alert(1);
+    			return;
+    		}
     		$.ajax({
     	  		method : "POST",
     	  		timeout : 5000,
@@ -152,29 +188,24 @@ require([
     	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
     	  		async:false,
     	  		success : function(data) {
-    	  			//这里的数据是jsonArray
+    	  			// 这里的数据是jsonArray
     	  			for(var i=0;i<data.length;i++){
     	  				showPoi(data[i]);
     	  			}
-    	  		/*	
-    	  		 * ，给template添加事件
-    	  		 * var popup = view.popup;
-    	  			 popup.on("trigger-action", function(event) {
-    	 		        if (event.action.id === "goIt") {
-    	 		        	if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    	 		        	   window.open(event.action.url[1]);
-    	 		        	} else {
-    	 		        		window.open(event.action.url[0]);
-    	 		        	}
-    	 		        }
-    	 		      });*/
+    	  			
+    	  		
+    	  		 /* //给template添加事件 var popup = view.popup;
+				  popup.on("trigger-action", function(event) { if
+				  (event.action.id === "goIt") {
+					  
+				  } });*/
+				 
     	  		},
     	  		error : function() {
-    	  			alert("error");
+    	  			alert("error")
     	  		}
     	  	});
     	}
-
 });
 
 

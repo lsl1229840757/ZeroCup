@@ -67,7 +67,7 @@
 .navMenu-item{
 	width:8%;
 }
-.item {
+.subtitle {
 	cursor: pointer;
 	font-size: 21px;
 	font-family: navFont;
@@ -84,7 +84,7 @@
 	text-align: center;
 }
 
-.active, .item:hover {
+#navMenu-items .active, .subtitle:hover {
 	outline: none;
 	-webkit-animation: glow 2000ms ease-out infinite alternate;
 	-moz-animation: glow 2000ms ease-out infinite alternate;
@@ -106,31 +106,7 @@
 	font-size: 18px;
 }
 
-.slide {
-	width: 1400px;
-	overflow: hidden;
+#carousel-example-generic{
+	width:70%;
 	margin: 0 auto;
 }
-
-.slide img {
-	max-width: 80%;
-	height: auto;
-	position: absolute; 
-	z-index:-1;
-}
-
-.slide .circle {
-	width: 15px;  
-    height: 15px;  
-    border-radius: 50%;
-    background:white;  
-    border: 1px solid steelblue;  
-	z-index: 1; 
-	cursor: pointer;
-	position: absolute;
-	margin-top: 30%;
-}
-.slide .hit{
-	background: red;
-}
-

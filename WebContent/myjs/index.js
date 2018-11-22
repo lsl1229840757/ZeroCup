@@ -17,22 +17,3 @@ function pointerScroll(ele) {
 		left : totalelement + parentScroll
 	})
 }
-
-// 对轮播图进行操作
-$('.slide .circle').click(function() {
-	idx = $(this).index('.slide .circle');
-	$('.slide .circle').not($(this)).removeClass('hit');
-	$(this).addClass('hit');
-	left = $('.slide img').offset().left;
-	right = $('.slide img').offset().right;
-	width = $('.slide img').width();
-	// 对图片进行操作
-	$('.slide img').animate({
-		left : -(left+width),
-	},'slow')
-	$(".slide img").css('src', 'images/img1.png');
-	$('.slide img').animate({
-		left : left,
-	},'slow')
-})
-
