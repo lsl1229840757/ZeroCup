@@ -34,8 +34,8 @@ public class UserServiceImplTest {
 		Note n = new Note();
 		n.setContent("关联user");
 		n.setTitle("关联user的note");
-		n.setLatitude(36);
-		n.setLongitude(114);
+		n.setLatitude(36d);
+		n.setLongitude(114d);
 		set.add(n);
 		u.setNotes(set);
 		us.save(u);

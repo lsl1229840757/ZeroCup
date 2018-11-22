@@ -58,10 +58,10 @@ body{
 	-moz-transition: -moz-box-shadow 0.5s;
 	-o-transition: -webkit-box-shadow 0.5s;
 	-ms-transition: -ms-box-shadow 0.5s;
-
-	-webkit-box-shadow:0 0 20px #ccc;
-	-moz-box-shadow:0 0 20px #ccc;
-	-o-box-shadow:0 0 20px #ccc;
-	-ms-box-shadow:0 0 20px #ccc;
-	box-shadow:0 0 20px #ccc;
+	-webkit-box-shadow:0 0 30px #ccc;
+	-moz-box-shadow:0 0 30px #ccc;
+	-o-box-shadow:0 0 30px #ccc;
+	-ms-box-shadow:0 0 30px #ccc;
+	box-shadow:0 0 30px #ccc;
 }
+

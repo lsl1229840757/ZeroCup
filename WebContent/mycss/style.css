@@ -3,6 +3,10 @@
 	padding: 0px;
 }
 
+.container-fluid{
+	padding-left:0;
+	padding-right:0;
+}
 @font-face {
 	font-family: "navFont";
 	src: url(../font/navFont.otf);
@@ -11,11 +15,14 @@
 #navMenu {
 	margin-bottom:3px;
 	position: relative;
-	margin-left: 140px;
+	margin-left: 10%;
 }
 
+.header{
+	overflow: hidden;
+}
 #logo {
-	width: 200px;
+	width: 15%;
 	float: left;
 	margin-top: 10px;
 }
@@ -37,6 +44,7 @@
 	white-space: nowrap;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
+	width:70%;
 }
 
 #menuSelector {
@@ -53,10 +61,13 @@
 #navMenu ul li {
 	display: inline-block;
 	margin: 16px 40px;
-	margin-left: 50px;
+	margin-left: 3%;
 }
 
-.item {
+.navMenu-item{
+	width:8%;
+}
+.subtitle {
 	cursor: pointer;
 	font-size: 21px;
 	font-family: navFont;
@@ -73,7 +84,7 @@
 	text-align: center;
 }
 
-.active, .item:hover {
+#navMenu-items .active, .subtitle:hover {
 	outline: none;
 	-webkit-animation: glow 2000ms ease-out infinite alternate;
 	-moz-animation: glow 2000ms ease-out infinite alternate;
@@ -95,32 +106,12 @@
 	font-size: 18px;
 }
 
+<<<<<<< HEAD
 .slide {
-	width: 1400px;
+	width: 80%;
+	overflow: hidden;
+
+#carousel-example-generic{
+	width:70%;
 	margin: 0 auto;
-}
-
-.slide img {
-	max-width: 100%;
-	height: auto;
-}
-
-.slide .circle {
-	width: 15px;  
-    height: 15px;  
-    border-radius: 50%;
-    background:white;  
-    border: 1px solid steelblue;  
-	position: absolute; 
-	z-index: 1; 
-	margin-top:530px;
-	cursor: pointer;
-}
-.slide .hit{
-	background: red;
-}
-canvas{
-	width:100%;
-	z-index:-1;
-	position: absolute;
 }
