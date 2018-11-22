@@ -20,6 +20,9 @@ function formatDate(time,format='YY-MM-DD hh:mm'){
                         .replace(/ss/g,preArr[sec]||sec);
     return newTime;         
 }
+var gl_map = null;
+var gl_layer = null;
+var gl_showPoi = null;
 require([
       "esri/Map",
       "esri/views/SceneView",
@@ -30,6 +33,7 @@ require([
     		var map = new Map({
     	        basemap: "streets"
     	      });
+    		gl_map = map;
            	var view = new SceneView({
              container: "viewDiv",
              map: map,
@@ -46,6 +50,7 @@ require([
                center: [0, 0]
            	});
            	var graphicsLayer = new GraphicsLayer();
+           	gl_layer = graphicsLayer;
           	map.add(graphicsLayer);
         	var opts = {
 	           		  duration: 6000,
@@ -132,10 +137,11 @@ require([
   		            	}
     		           ],
     		      };
+    		    gl_tempt_template =  template;
     		    function setContent(poi){
     		    	var sum = "";
     		    	for(var i=0;i<poi.notes.length;i++){
-    		    		var comment = "<div class='comment' style='height: 40%;width: 70%;background-color: red;'>"+poi.notes[i].title+"</div>";
+    		    		var comment = "<div class='comment' style='height: 40%;width: 70%;background-color: red;'>"+poi.notes[i].content+"</div>";
         		    	var name = "<div class='username' style='height: 20%;width: 30%;background-color: black;'>"+poi.notes[i].user+"</div>";
         		    	sum+=("<div class='commentInfo'>"+comment+name+"</div>");
     		    	}
@@ -147,7 +153,7 @@ require([
     		    			"aria-expanded='false' aria-controls='collapseExample'>" +
     		    			"评论</button>" +
     		    			"<div class='collapse' id='collapseExample'>" +
-    		    			"<textArea class='well'></textArea><button class='btn btn-success' id='refresh'>提交" +
+    		    			"<textArea class='well'></textArea><button poiId='"+poi.id+"'class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
     		    			"</button></div>" +
     		    			"<script type='text/javascript'>alert(5)</script>";
     		    	return btn;
@@ -159,15 +165,8 @@ require([
     		        popupTemplate:template
     		      });
     		    graphicsLayer.add(pointGraphic);
-    		    
     	}
-    	
-    	
-    	function refresh(){
-    		var flag = 1;
-    		ajax_showAllPois(flag);
-    	}
-    	
+    	gl_showPoi = showPoi;
     	/**
 		 * 
 		 * 第一次展示所有的Poi信息以及相关的评论信息
@@ -182,7 +181,7 @@ require([
     		$.ajax({
     	  		method : "POST",
     	  		timeout : 5000,
-    	  		url : path+"/ajax_showAllPois",
+    	  		url : path+"/ajax_poi_showAllPois",
     	  		data :"now="+new Date().getTime(), // 防止缓存问题
     	  		dataType : "json",
     	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
@@ -197,7 +196,6 @@ require([
     	  		 /* //给template添加事件 var popup = view.popup;
 				  popup.on("trigger-action", function(event) { if
 				  (event.action.id === "goIt") {
-					  
 				  } });*/
 				 
     	  		},
@@ -207,6 +205,31 @@ require([
     	  	});
     	}
 });
-
+function ajax_addNote(layer,showPoi,btn){
+	layer.removeAll();
+	$.ajax({
+  		method : "POST",
+  		timeout : 5000,
+  		url : path+"/ajax_poi_addNote",
+  		data :{
+  			"now":new Date().getTime(),
+  			"poiId":$(btn).attr("poiId"),
+  			"content":$(".well").val()
+  		}, // 防止缓存问题
+  		dataType : "json",
+  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
+  		async:false,
+  		success : function(data) {
+  			// 这里的数据是jsonArray
+  			for(var i=0;i<data.length;i++){
+  				showPoi(data[i]);
+  			}
+  		},
+  		error : function() {
+  			alert("error")
+  		}
+  	});
+	$(".esri-popup__main-container").remove();
+}
 
 
