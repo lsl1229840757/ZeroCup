@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		</nav>
-		<div class="slide">
+		<div class="slide"> 
 			<img alt="" src="images/img1.jpg">
 			<div class="circle hit" style="margin-left: 20px;"></div>
 			<div class="circle" style="margin-left: 50px;"></div>
