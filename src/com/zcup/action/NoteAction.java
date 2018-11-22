@@ -15,6 +15,16 @@ public class NoteAction extends HttpBaseAction {
 	
 	private Integer poiId;
 	
+	private String userName;
+	
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	public Integer getPoiId() {
 		return poiId;
 	}
@@ -45,7 +55,7 @@ public class NoteAction extends HttpBaseAction {
 	 * @throws IOException 
 	 */
 	public void ajax_addNote() throws IOException {
-		noteService.saveNote(note, poiId);
+		noteService.saveNote(note, poiId,userName);
 		response.getWriter().write("success");
 	}
 	

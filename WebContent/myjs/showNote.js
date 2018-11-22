@@ -20,16 +20,24 @@ function formatDate(time,format='YY-MM-DD hh:mm'){
                         .replace(/ss/g,preArr[sec]||sec);
     return newTime;         
 }
+var pois= null;
+var gl_map = null;
+var flag = 0;
+function b(){
+	
+}
 require([
       "esri/Map",
       "esri/views/SceneView",
       "esri/layers/GraphicsLayer",
-      "esri/Graphic", 
+      "esri/Graphic",
       "dojo/domReady!"
     ], function(Map,SceneView,GraphicsLayer, Graphic){
+		
     		var map = new Map({
     	        basemap: "streets"
     	      });
+    		gl_map = map;
            	var view = new SceneView({
              container: "viewDiv",
              map: map,
@@ -68,8 +76,8 @@ require([
          		}, opts2);
        	});
        	// 初始化所有poi
-       	ajax_showAllPois(0);
-       	
+       	ajax_showAllPois(flag);
+    
        	/**
 		 * 
 		 * 定义一些函数
@@ -141,15 +149,15 @@ require([
     		    	}
     		    	return sum;
     		    }
+    			
     		    function setBtn(){
     		    	var btn = "<button class='btn btn-primary' id='mybtn' type='button' " +
     		    			"data-toggle='collapse' data-target='#collapseExample' " +
     		    			"aria-expanded='false' aria-controls='collapseExample'>" +
     		    			"评论</button>" +
     		    			"<div class='collapse' id='collapseExample'>" +
-    		    			"<textArea class='well'></textArea><button class='btn btn-success' id='refresh'>提交" +
-    		    			"</button></div>" +
-    		    			"<script type='text/javascript'>alert(5)</script>";
+    		    			"<textArea class='well'></textArea><button class='btn btn-success' id='refresh' onclick='a(1,2)'>提交" +
+    		    			"</button></div>";
     		    	return btn;
     		    }
     		    var pointGraphic = new Graphic({
@@ -159,13 +167,6 @@ require([
     		        popupTemplate:template
     		      });
     		    graphicsLayer.add(pointGraphic);
-    		    
-    	}
-    	
-    	
-    	function refresh(){
-    		var flag = 1;
-    		ajax_showAllPois(flag);
     	}
     	
     	/**
@@ -174,11 +175,11 @@ require([
 		 * 
 		 */
     	function ajax_showAllPois(flag){
-    		if(flag==1){
+    		if(flag!=0){
     			map.removeAll();
     			alert(1);
-    			return;
     		}
+    		flag++;
     		$.ajax({
     	  		method : "POST",
     	  		timeout : 5000,
@@ -190,7 +191,9 @@ require([
     	  		success : function(data) {
     	  			// 这里的数据是jsonArray
     	  			for(var i=0;i<data.length;i++){
+    	  				pois = data[i];
     	  				showPoi(data[i]);
+    	  				
     	  			}
     	  			
     	  		
@@ -206,7 +209,33 @@ require([
     	  		}
     	  	});
     	}
+    	b = ajax_showAllPois;
+    
 });
+
+function a(c,d){
+	$.ajax({
+  		method : "POST",
+  		timeout : 5000,
+  		url : path+"/ajax_addNote",
+  		data :{
+  			"now":new Date().getTime(), 
+  			"note.content":$(".well").val(),
+  			"poiId":d,
+  			"userName":"胡森"},   // 防止缓存问题
+  		dataType : "json",
+  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
+  		async:false,
+  		success : function(data) {
+  			alert(data);
+  		},
+  		error : function(s) {
+  			console.log(s)
+  		}
+  	});
+	b(flag);
+}
+
 
 
 

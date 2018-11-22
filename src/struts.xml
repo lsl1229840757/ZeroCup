@@ -17,7 +17,9 @@
 		<action name="i18n2" class="i18nTestAction" method="changeContext">
 			<result name="success">/i18nTest2.jsp</result>
 		</action>
-		<action name="ajax_*" class="poiAction" method="ajax_{1}"> <!-- 1:showAllPoi方法 -->
+		<action name="ajax_showAllPois" class="poiAction" method="ajax_showAllPois"> <!-- 1:showAllPoi方法 -->
+		</action>
+		<action name="ajax_addNote" class="noteAction" method="ajax_addNote"> <!-- 1:showAllPoi方法 -->
 		</action>
 	</package>
 	
