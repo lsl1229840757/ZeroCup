@@ -96,7 +96,7 @@ require([
     		          color:col,
     		          width: 0.1
     		        },
-    		      size:Math.random()*15+5// 15-30
+					size:Math.random()*15+5// 15-30
     		      };
 
     		      // 类似于Map
@@ -121,10 +121,10 @@ require([
     		            },{
     		             type: "media",
     		            mediaInfos: [{
-    		              type: "image",
-    		           value: {
-    	                sourceURL: path+poi.url
-    		           	}
+							type: "image",
+							value: {
+								sourceURL: path+poi.url
+							}
     		            }]
     		           },
     		           {
