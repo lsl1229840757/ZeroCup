@@ -108,7 +108,7 @@ require([
 				// 添加template的action
 				var go = { title: "评论", id: "goIt"};
     		    var template = {
-    		    		title: "<p align = 'center'><b>"+poi.name+"</b></p>",
+    		    		title: "<h3 align='center' style='margin-left: 50px;'><span class='label label-warning'>特征点:"+poi.name+"</span></h3>",
     		            content: [{
     		              type: "fields",
     		              fieldInfos: [{
@@ -118,7 +118,7 @@ require([
     		            },{
     		            	type:"text",
     		            	// 可以使用html语句修饰
-    		            	text:"<b>预览图片</b>"
+    		            	text:"<h3 align='center'><span class='label label-success'>预览图片</span></h3>"
     		            },{
     		             type: "media",
     		            mediaInfos: [{
@@ -128,6 +128,11 @@ require([
     		           	}
     		            }]
     		           },
+    		           {
+   		            	type:"text",
+   		            	// 可以使用html语句修饰
+   		            	text:"<h3 align='center'><span class='label label-info'>评论内容</span></h3>"
+   		            	},
     		           {
 	   		            	type:"text",
 	   		            	text:setContent(poi)
@@ -147,7 +152,7 @@ require([
         		    	
         		    	sum+=("<div class='panel panel-info'>"+name+comment+"</div>");
     		    	}
-    		    	return sum;
+    		    	return "<div class='pre-scrollable'>"+sum+"</div>";
     		    }
     			
     		    function setBtn(){

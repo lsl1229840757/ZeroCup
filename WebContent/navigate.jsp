@@ -13,6 +13,12 @@
 		$('.carousel').carousel({
 			interval : 5000
 		})
+		$("ul li:eq(3)").click(function() {
+			$(location).attr('href', '${path }/pict/ImagePage');
+		})
+		$("ul li:eq(4)").click(function() {
+			$(location).attr('href', '${path }/pict/mapPage');
+		})
 	})
 </script>
 </head>
@@ -20,13 +26,13 @@
 	<div class="container-fluid">
 
 		<div class="header">
-			<img alt="" src="images/head.png">
+			<img alt="" src="${path }/images/head.png">
 		</div>
 		<nav class="navbar navbar-default">
 		<div id="navMenu">
 			<div id="navMenu-wrapper">
 				<div id="logo">
-					<img alt="" src="images/logo.png">
+					<img alt="" src="${path }/images/logo.png">
 				</div>
 				<ul id="navMenu-items">
 					<div id="menuSelector"></div>
@@ -55,16 +61,16 @@
 
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="images/img1.jpg" alt="...">
+					<img src="${path }/images/img1.jpg" alt="...">
 					<!-- 添加描述信息 -->
 					<div class="carousel-caption">...</div>
 				</div>
 				<div class="item">
-					<img src="images/img1.jpg" alt="...">
+					<img src="${path }/images/img1.jpg" alt="...">
 					<div class="carousel-caption">...</div>
 				</div>
 				<div class="item">
-					<img src="images/img1.jpg" alt="...">
+					<img src="${path }/images/img1.jpg" alt="...">
 					<div class="carousel-caption">...</div>
 				</div>
 			</div>

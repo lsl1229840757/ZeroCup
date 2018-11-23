@@ -53,6 +53,19 @@ public class PoiAction extends HttpBaseAction {
 	
 
 	/**
+	 * 进入ArcMap.jsp页面
+	 */
+	public String enterArc() {
+		return super.SUCCESS;
+	}
+	
+	/**
+	 * 进入相册
+	 */
+	public String enterImage() {
+		return super.SUCCESS;
+	}
+	/**
 	 * ajax加载所有poi以及其notes相关信息
 	 * @throws IOException
 	 */
