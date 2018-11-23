@@ -46,7 +46,6 @@ public class NoteServiceImplTest {
 		n.setTitle("标题");
 		n.setLatitude(36d);
 		n.setLongitude(114d);
-		//noteService.saveNote(n, 2);
 	}
 
 }

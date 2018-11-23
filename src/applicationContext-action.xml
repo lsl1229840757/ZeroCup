@@ -10,4 +10,6 @@
 <bean class="com.zcup.action.I18nTestAction" id="i18nTestAction" scope="prototype"></bean>
 <bean id="noteAction" class="com.zcup.action.NoteAction" scope="prototype"></bean>
 <bean id="poiAction" class="com.zcup.action.PoiAction" scope="prototype"></bean>
+<bean id="userAction" class="com.zcup.action.UserAction" scope="prototype"></bean>
+<bean id="createImageAction" class="com.zcup.action.CreateImageAction" scope="prototype"></bean>
 </beans>

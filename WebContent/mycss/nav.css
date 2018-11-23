@@ -71,6 +71,7 @@
 	cursor: pointer;
 	font-size: 21px;
 	font-family: navFont;
+	display: block;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	-o-box-sizing: content-box;
@@ -79,7 +80,6 @@
 	border: 1px solid #444;
 	border-left-color: #000;
 	border-radius: 5px 5px 5px 5px;
-	display: block;
 	width: 100px;
 	text-align: center;
 }
@@ -106,10 +106,6 @@
 	font-size: 18px;
 }
 
-<<<<<<< HEAD
-.slide {
-	width: 80%;
-	overflow: hidden;
 
 #carousel-example-generic{
 	width:70%;

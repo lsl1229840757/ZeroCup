@@ -27,9 +27,10 @@ require([
       "esri/Map",
       "esri/views/SceneView",
       "esri/layers/GraphicsLayer",
-      "esri/Graphic", 
+      "esri/Graphic",
       "dojo/domReady!"
     ], function(Map,SceneView,GraphicsLayer, Graphic){
+		
     		var map = new Map({
     	        basemap: "streets"
     	      });
@@ -66,15 +67,15 @@ require([
        		var opts2 = {
 	           		  duration: 2000,
 	           		};
-       	$("#goback").click(function(){
+       	$("#back").click(function(){
        		view.goTo({
          		  target: [114.35324042896691,30.535762797065825],
          		  zoom:15
          		}, opts2);
        	});
        	// 初始化所有poi
-       	ajax_showAllPois(0);
-       	
+       	ajax_showAllPois();
+    
        	/**
 		 * 
 		 * 定义一些函数
@@ -107,7 +108,7 @@ require([
 				// 添加template的action
 				var go = { title: "评论", id: "goIt"};
     		    var template = {
-    		    		title: "<p align = 'center'><b>"+poi.name+"</b></p>",
+    		    		title: "<h3 align='center' style='margin-left: 50px;'><span class='label label-warning'>特征点:"+poi.name+"</span></h3>",
     		            content: [{
     		              type: "fields",
     		              fieldInfos: [{
@@ -117,7 +118,7 @@ require([
     		            },{
     		            	type:"text",
     		            	// 可以使用html语句修饰
-    		            	text:"<b>预览图片</b>"
+    		            	text:"<h3 align='center'><span class='label label-success'>预览图片</span></h3>"
     		            },{
     		             type: "media",
     		            mediaInfos: [{
@@ -128,6 +129,11 @@ require([
     		            }]
     		           },
     		           {
+   		            	type:"text",
+   		            	// 可以使用html语句修饰
+   		            	text:"<h3 align='center'><span class='label label-info'>评论内容</span></h3>"
+   		            	},
+    		           {
 	   		            	type:"text",
 	   		            	text:setContent(poi)
    		            	},
@@ -137,25 +143,25 @@ require([
   		            	}
     		           ],
     		      };
-    		    gl_tempt_template =  template;
     		    function setContent(poi){
     		    	var sum = "";
     		    	for(var i=0;i<poi.notes.length;i++){
-    		    		var comment = "<div class='comment' style='height: 40%;width: 70%;background-color: red;'>"+poi.notes[i].content+"</div>";
-        		    	var name = "<div class='username' style='height: 20%;width: 30%;background-color: black;'>"+poi.notes[i].user+"</div>";
-        		    	sum+=("<div class='commentInfo'>"+comment+name+"</div>");
+    		    		var name = "<div class='panel-heading'><span class='glyphicon glyphicon-user'></span><h3 class='panel-title'>"+poi.notes[i].user+"</h3></div>";
+    		    		var comment = "<div class='panel-body'>"+poi.notes[i].content+"</div>";
+        		    	
+        		    	sum+=("<div class='panel panel-info'>"+name+comment+"</div>");
     		    	}
-    		    	return sum;
+    		    	return "<div class='pre-scrollable'>"+sum+"</div>";
     		    }
+    			
     		    function setBtn(){
     		    	var btn = "<button class='btn btn-primary' id='mybtn' type='button' " +
     		    			"data-toggle='collapse' data-target='#collapseExample' " +
     		    			"aria-expanded='false' aria-controls='collapseExample'>" +
     		    			"评论</button>" +
     		    			"<div class='collapse' id='collapseExample'>" +
-    		    			"<textArea class='well'></textArea><button poiId='"+poi.id+"'class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
-    		    			"</button></div>" +
-    		    			"<script type='text/javascript'>alert(5)</script>";
+    		    			"<textArea class='well form-control' rows='3'></textArea><button poiId='"+poi.id+"'class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
+    		    			"</button></div>";
     		    	return btn;
     		    }
     		    var pointGraphic = new Graphic({
@@ -166,18 +172,14 @@ require([
     		      });
     		    graphicsLayer.add(pointGraphic);
     	}
+    	
     	gl_showPoi = showPoi;
     	/**
 		 * 
 		 * 第一次展示所有的Poi信息以及相关的评论信息
 		 * 
 		 */
-    	function ajax_showAllPois(flag){
-    		if(flag==1){
-    			map.removeAll();
-    			alert(1);
-    			return;
-    		}
+    	function ajax_showAllPois(){
     		$.ajax({
     	  		method : "POST",
     	  		timeout : 5000,
@@ -191,8 +193,6 @@ require([
     	  			for(var i=0;i<data.length;i++){
     	  				showPoi(data[i]);
     	  			}
-    	  			
-    	  		
     	  		 /* //给template添加事件 var popup = view.popup;
 				  popup.on("trigger-action", function(event) { if
 				  (event.action.id === "goIt") {
@@ -205,31 +205,47 @@ require([
     	  	});
     	}
 });
+
 function ajax_addNote(layer,showPoi,btn){
-	layer.removeAll();
-	$.ajax({
-  		method : "POST",
-  		timeout : 5000,
-  		url : path+"/ajax_poi_addNote",
-  		data :{
-  			"now":new Date().getTime(),
-  			"poiId":$(btn).attr("poiId"),
-  			"content":$(".well").val()
-  		}, // 防止缓存问题
-  		dataType : "json",
-  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
-  		async:false,
-  		success : function(data) {
-  			// 这里的数据是jsonArray
-  			for(var i=0;i<data.length;i++){
-  				showPoi(data[i]);
-  			}
-  		},
-  		error : function() {
-  			alert("error")
-  		}
-  	});
-	$(".esri-popup__main-container").remove();
+	var str = $(".well").val();
+	if(str!=null&&str!==""){
+		layer.removeAll();
+		$.ajax({
+	  		method : "POST",
+	  		timeout : 5000,
+	  		url : path+"/ajax_poi_addNote",
+	  		data :{
+	  			"now":new Date().getTime(),
+	  			"poiId":$(btn).attr("poiId"),
+	  			"note.content":str
+	  		}, // 防止缓存问题
+	  		dataType : "json",
+	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
+	  		async:false,
+	  		success : function(data) {
+	  			// 这里的数据是jsonArray
+	  			for(var i=0;i<data.length;i++){
+	  				showPoi(data[i]);
+	  			}
+	  		},
+	  		error : function(b) {
+	  			console.log(b);
+	  		}
+	  	});
+		$(".esri-popup").empty();
+		$(".well").val(''); 
+		var pWidth = $("#viewDiv").width();
+		// 发射弹幕
+	    var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
+	    $("#danmu").css({"color":"#"+randomColor});
+	    $("#danmu").html(str);
+	    $("#danmu").animate({left:-pWidth},10000,function(){
+	        $(this).html('');
+	        $(this).css('left',pWidth);
+	        });		
+	}else{
+		alert("内容不能为空");
+	}
 }
 
 

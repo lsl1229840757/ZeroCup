@@ -21,7 +21,16 @@ public class PoiAction extends HttpBaseAction {
 	private PoiService poiService;
 	@Resource
 	private NoteService noteService;
-	private String content;
+	private Note note;
+	
+	public Note getNote() {
+		return note;
+	}
+
+	public void setNote(Note note) {
+		this.note = note;
+	}
+
 	private UserQuery query;
 	private Integer poiId;
 	
@@ -40,15 +49,19 @@ public class PoiAction extends HttpBaseAction {
 	public void setQuery(UserQuery query) {
 		this.query = query;
 	}
-
-	public String getContent() {
-		return content;
+	/**
+	 * 进入ArcMap.jsp页面
+	 */
+	public String enterArc() {
+		return super.SUCCESS;
 	}
-
-	public void setContent(String content) {
-		this.content = content;
+	
+	/**
+	 * 进入相册
+	 */
+	public String enterImage() {
+		return super.SUCCESS;
 	}
-
 	/**
 	 * ajax加载所有poi以及其notes相关信息
 	 * @throws IOException
@@ -75,10 +88,9 @@ public class PoiAction extends HttpBaseAction {
 	}
 	
 	public void ajax_addNote() throws IOException {
-		noteService.saveNote(content, poiId,"3245234");
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		noteService.saveNote(content, poiId, "3245234");
+		noteService.saveNote(note.getContent(), poiId, "3245234");
 		List<Poi> list = poiService.list();
 		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] {"notes"}); // 先排除notes的集合对象
 		for (int i = 0; i < array.size(); i++) {

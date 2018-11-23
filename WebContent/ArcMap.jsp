@@ -16,22 +16,30 @@ html, body, #viewDiv {
     height: 100%;
     width: 100%;
  }
+ #danmu{
+	position: absolute;
+  font-size: 30px;
+  right: 0;
+  top:30%;
+  z-index: 1;
+ }
 </style>
 <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
 <script src="https://js.arcgis.com/4.8/"></script>
 <script type="text/javascript" src="${path }/myjs/showNote.js"></script>
 <script type="text/javascript">
 </script>
+<link rel="stylesheet" href="${path }/mycss/arcmap.css">
 <script type="text/javascript">
 
 
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>地图</title>
 </head>
 <body>
-<div id="goback">回到武大</div>
+<button id="back" class='btn btn-primary btn-lg'>回到武大</button>
+<div id="danmu"></div>
 <div id="viewDiv" class="right"></div>
-<button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
 </body>
 </html>
