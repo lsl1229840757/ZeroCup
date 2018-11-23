@@ -16,6 +16,13 @@ html, body, #viewDiv {
     height: 100%;
     width: 100%;
  }
+ #danmu{
+	position: absolute;
+  font-size: 30px;
+  right: 0;
+  top:30%;
+  z-index: 1;
+ }
 </style>
 <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
 <script src="https://js.arcgis.com/4.8/"></script>
@@ -32,6 +39,7 @@ html, body, #viewDiv {
 </head>
 <body>
 <button id="back" class='btn btn-primary btn-lg'>回到武大</button>
+<div id="danmu"></div>
 <div id="viewDiv" class="right"></div>
 </body>
 </html>
