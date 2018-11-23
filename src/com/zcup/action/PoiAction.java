@@ -49,9 +49,6 @@ public class PoiAction extends HttpBaseAction {
 	public void setQuery(UserQuery query) {
 		this.query = query;
 	}
-
-	
-
 	/**
 	 * ajax加载所有poi以及其notes相关信息
 	 * @throws IOException
@@ -80,7 +77,7 @@ public class PoiAction extends HttpBaseAction {
 	public void ajax_addNote() throws IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		noteService.saveNote(note.getContent(), poiId, "胡森");
+		noteService.saveNote(note.getContent(), poiId, "3245234");
 		List<Poi> list = poiService.list();
 		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] {"notes"}); // 先排除notes的集合对象
 		for (int i = 0; i < array.size(); i++) {

@@ -138,7 +138,6 @@ require([
   		            	}
     		           ],
     		      };
-    		    gl_tempt_template =  template;
     		    function setContent(poi){
     		    	var sum = "";
     		    	for(var i=0;i<poi.notes.length;i++){
@@ -187,9 +186,7 @@ require([
     	  		success : function(data) {
     	  			// 这里的数据是jsonArray
     	  			for(var i=0;i<data.length;i++){
-    	  				pois = data[i];
     	  				showPoi(data[i]);
-    	  				
     	  			}
     	  		 /* //给template添加事件 var popup = view.popup;
 				  popup.on("trigger-action", function(event) { if
@@ -205,31 +202,45 @@ require([
 });
 
 function ajax_addNote(layer,showPoi,btn){
-	layer.removeAll();
-	$.ajax({
-  		method : "POST",
-  		timeout : 5000,
-  		url : path+"/ajax_poi_addNote",
-  		data :{
-  			"now":new Date().getTime(),
-  			"poiId":$(btn).attr("poiId"),
-  			"note.content":$(".well").val()
-  		}, // 防止缓存问题
-  		dataType : "json",
-  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
-  		async:false,
-  		success : function(data) {
-  			// 这里的数据是jsonArray
-  			for(var i=0;i<data.length;i++){
-  				showPoi(data[i]);
-  			}
-  		},
-  		error : function(b) {
-  			console.log(b);
-  		}
-  	});
-	$(".esri-popup__main-container").remove();
-	$(".esri-popup__pointer").remove();
+	var str = $(".well").val();
+	if(str!=null&&str!==""){
+		layer.removeAll();
+		$.ajax({
+	  		method : "POST",
+	  		timeout : 5000,
+	  		url : path+"/ajax_poi_addNote",
+	  		data :{
+	  			"now":new Date().getTime(),
+	  			"poiId":$(btn).attr("poiId"),
+	  			"note.content":str
+	  		}, // 防止缓存问题
+	  		dataType : "json",
+	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
+	  		async:false,
+	  		success : function(data) {
+	  			// 这里的数据是jsonArray
+	  			for(var i=0;i<data.length;i++){
+	  				showPoi(data[i]);
+	  			}
+	  		},
+	  		error : function(b) {
+	  			console.log(b);
+	  		}
+	  	});
+		$(".esri-popup").empty();
+		$(".well").val(''); 
+		var pWidth = $("#viewDiv").width();
+		// 发射弹幕
+	    var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
+	    $("#danmu").css({"color":"#"+randomColor});
+	    $("#danmu").html(str);
+	    $("#danmu").animate({left:-pWidth},10000,function(){
+	        $(this).html('');
+	        $(this).css('left',pWidth);
+	        });		
+	}else{
+		alert("内容不能为空");
+	}
 }
 
 
