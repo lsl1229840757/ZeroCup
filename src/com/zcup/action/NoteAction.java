@@ -49,14 +49,6 @@ public class NoteAction extends HttpBaseAction {
 		this.note = note;
 	}
 	
-
-	/**
-	 * ajax添加Note
-	 * @throws IOException 
-	 */
-	public void ajax_addNote() throws IOException {
-		noteService.saveNote(note, poiId,userName);
-		response.getWriter().write("success");
-	}
+	
 	
 }

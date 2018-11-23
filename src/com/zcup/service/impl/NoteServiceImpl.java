@@ -14,9 +14,11 @@ import com.zcup.service.NoteService;
 public class NoteServiceImpl extends BaseServiceImpl<Note, NoteQuery> implements NoteService {
 
 	@Resource
-	private PoiDao poiDao;
-	@Resource
 	private UserDao userDao;
+	
+	@Resource
+	private PoiDao poiDao;
+	
 	private NoteDao noteDao;
 
 	public NoteDao getNoteDao() {
@@ -29,12 +31,14 @@ public class NoteServiceImpl extends BaseServiceImpl<Note, NoteQuery> implements
 	}
 
 	@Override
-	public void saveNote(Note note, Integer poiId,String userName) {
+	public void saveNote(String content, Integer poiId,String name) {
+		Note note = new Note();
+		note.setContent(content);
 		Poi poi = poiDao.getObjById(poiId);
-		User user = userDao.getUserByUsername(userName);
-		note.setPoi(poi);
+		User user = userDao.getUserByUsername(name);
 		note.setUser(user);
-		noteDao.saveObj(note);
+		user.getNotes().add(note);
+		poi.getNotes().add(note); //这里便会级联更新
 	}
 	
 }

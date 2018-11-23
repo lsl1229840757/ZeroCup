@@ -22,16 +22,16 @@ html, body, #viewDiv {
 <script type="text/javascript" src="${path }/myjs/showNote.js"></script>
 <script type="text/javascript">
 </script>
+<link rel="stylesheet" href="${path }/mycss/arcmap.css">
 <script type="text/javascript">
 
 
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>地图</title>
 </head>
 <body>
-<div id="goback">回到武大</div>
+<button id="back" class='btn btn-primary btn-lg'>回到武大</button>
 <div id="viewDiv" class="right"></div>
-<button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
 </body>
 </html>

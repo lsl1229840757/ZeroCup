@@ -1,0 +1,15 @@
+.esri-view-width-medium .esri-popup__main-container{
+	width:600px;
+	height:500px;
+	max-height: 1000px;
+}
+
+#back{
+	position:absolute;
+	margin-left:90%;
+	z-index:1;
+}
+
+#viewDiv{
+	z-index : -1;
+}

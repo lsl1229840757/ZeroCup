@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>导航界面</title>
 <script src="${path }/outerjs/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="${path }/mycss/style.css">
+<link rel="stylesheet" type="text/css" href="${path }/mycss/nav.css">
 <script type="text/javascript">
 	$(function() {
 		$('.carousel').carousel({

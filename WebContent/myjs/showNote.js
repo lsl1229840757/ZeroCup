@@ -20,12 +20,9 @@ function formatDate(time,format='YY-MM-DD hh:mm'){
                         .replace(/ss/g,preArr[sec]||sec);
     return newTime;         
 }
-var pois= null;
 var gl_map = null;
-var flag = 0;
-function b(){
-	
-}
+var gl_layer = null;
+var gl_showPoi = null;
 require([
       "esri/Map",
       "esri/views/SceneView",
@@ -54,6 +51,7 @@ require([
                center: [0, 0]
            	});
            	var graphicsLayer = new GraphicsLayer();
+           	gl_layer = graphicsLayer;
           	map.add(graphicsLayer);
         	var opts = {
 	           		  duration: 6000,
@@ -69,14 +67,14 @@ require([
        		var opts2 = {
 	           		  duration: 2000,
 	           		};
-       	$("#goback").click(function(){
+       	$("#back").click(function(){
        		view.goTo({
          		  target: [114.35324042896691,30.535762797065825],
          		  zoom:15
          		}, opts2);
        	});
        	// 初始化所有poi
-       	ajax_showAllPois(flag);
+       	ajax_showAllPois();
     
        	/**
 		 * 
@@ -140,12 +138,14 @@ require([
   		            	}
     		           ],
     		      };
+    		    gl_tempt_template =  template;
     		    function setContent(poi){
     		    	var sum = "";
     		    	for(var i=0;i<poi.notes.length;i++){
-    		    		var comment = "<div class='comment' style='height: 40%;width: 70%;background-color: red;'>"+poi.notes[i].title+"</div>";
-        		    	var name = "<div class='username' style='height: 20%;width: 30%;background-color: black;'>"+poi.notes[i].user+"</div>";
-        		    	sum+=("<div class='commentInfo'>"+comment+name+"</div>");
+    		    		var name = "<div class='panel-heading'><span class='glyphicon glyphicon-user'></span><h3 class='panel-title'>"+poi.notes[i].user+"</h3></div>";
+    		    		var comment = "<div class='panel-body'>"+poi.notes[i].content+"</div>";
+        		    	
+        		    	sum+=("<div class='panel panel-info'>"+name+comment+"</div>");
     		    	}
     		    	return sum;
     		    }
@@ -156,7 +156,7 @@ require([
     		    			"aria-expanded='false' aria-controls='collapseExample'>" +
     		    			"评论</button>" +
     		    			"<div class='collapse' id='collapseExample'>" +
-    		    			"<textArea class='well'></textArea><button class='btn btn-success' id='refresh' onclick='a(1,2)'>提交" +
+    		    			"<textArea class='well form-control' rows='3'></textArea><button poiId='"+poi.id+"'class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
     		    			"</button></div>";
     		    	return btn;
     		    }
@@ -169,21 +169,17 @@ require([
     		    graphicsLayer.add(pointGraphic);
     	}
     	
+    	gl_showPoi = showPoi;
     	/**
 		 * 
 		 * 第一次展示所有的Poi信息以及相关的评论信息
 		 * 
 		 */
-    	function ajax_showAllPois(flag){
-    		if(flag!=0){
-    			map.removeAll();
-    			alert(1);
-    		}
-    		flag++;
+    	function ajax_showAllPois(){
     		$.ajax({
     	  		method : "POST",
     	  		timeout : 5000,
-    	  		url : path+"/ajax_showAllPois",
+    	  		url : path+"/ajax_poi_showAllPois",
     	  		data :"now="+new Date().getTime(), // 防止缓存问题
     	  		dataType : "json",
     	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
@@ -195,12 +191,9 @@ require([
     	  				showPoi(data[i]);
     	  				
     	  			}
-    	  			
-    	  		
     	  		 /* //给template添加事件 var popup = view.popup;
 				  popup.on("trigger-action", function(event) { if
 				  (event.action.id === "goIt") {
-					  
 				  } });*/
 				 
     	  		},
@@ -209,33 +202,34 @@ require([
     	  		}
     	  	});
     	}
-    	b = ajax_showAllPois;
-    
 });
 
-function a(c,d){
+function ajax_addNote(layer,showPoi,btn){
+	layer.removeAll();
 	$.ajax({
   		method : "POST",
   		timeout : 5000,
-  		url : path+"/ajax_addNote",
+  		url : path+"/ajax_poi_addNote",
   		data :{
-  			"now":new Date().getTime(), 
-  			"note.content":$(".well").val(),
-  			"poiId":d,
-  			"userName":"胡森"},   // 防止缓存问题
+  			"now":new Date().getTime(),
+  			"poiId":$(btn).attr("poiId"),
+  			"note.content":$(".well").val()
+  		}, // 防止缓存问题
   		dataType : "json",
   		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
   		async:false,
   		success : function(data) {
-  			alert(data);
+  			// 这里的数据是jsonArray
+  			for(var i=0;i<data.length;i++){
+  				showPoi(data[i]);
+  			}
   		},
-  		error : function(s) {
-  			console.log(s)
+  		error : function(b) {
+  			console.log(b);
   		}
   	});
-	b(flag);
+	$(".esri-popup__main-container").remove();
+	$(".esri-popup__pointer").remove();
 }
-
-
 
 
