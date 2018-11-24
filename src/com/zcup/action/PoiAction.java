@@ -120,7 +120,6 @@ public class PoiAction extends HttpBaseAction {
 			JSONObject jb = array.getJSONObject(i); // 获得每一个poiJSon
 			Set<Note> notes = list.get(i).getNotes();
 			JSONArray array2 = JsonUtils.convert2JSONArray(notes, new String[] { "user", "poi" }); // 考虑安全问题以及循环问题排除user属性
-																									// ,暂时不需要poi的相关信息
 			// 组装Note对象,将user替换为name
 			for (int j = 0; j < array2.size(); j++) {
 				JSONObject jsonObject = array2.getJSONObject(j);

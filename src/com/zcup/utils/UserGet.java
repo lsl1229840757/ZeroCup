@@ -15,5 +15,4 @@ public class UserGet {
 		}
 		return user;
 	}
-	
 }

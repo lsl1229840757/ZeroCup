@@ -235,6 +235,7 @@ function ajax_addNote(layer,showPoi,btn){
 		  			}
 	  		},
 	  		error : function(b) {
+	  			console.log(b);
 	  			alert("错误!");
 	  		}
 	  	});
