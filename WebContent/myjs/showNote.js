@@ -60,7 +60,8 @@ require([
        		  target: [114.35324042896691,30.535762797065825],
        		  zoom:18
        		}, opts);
-       		/*
+       		
+			/*
 			 * view.on("click", function(e) { alert(e.mapPoint.latitude);
 			 * alert(e.mapPoint.longitude); });
 			 */
@@ -103,7 +104,6 @@ require([
     		      // 类似于Map
     		    var attribute = {
     		    		  描述: poi.description,
-    		    		  留言: poi.notes[0].content
     		      };
 				// 添加template的action
 				var go = { title: "评论", id: "goIt"};
@@ -155,6 +155,7 @@ require([
     		    }
     			
     		    function setBtn(){
+    		    	
     		    	var btn = "<button class='btn btn-primary' id='mybtn' type='button' " +
     		    			"data-toggle='collapse' data-target='#collapseExample' " +
     		    			"aria-expanded='false' aria-controls='collapseExample'>" +
@@ -193,10 +194,12 @@ require([
     	  			for(var i=0;i<data.length;i++){
     	  				showPoi(data[i]);
     	  			}
-    	  		 /* //给template添加事件 var popup = view.popup;
-				  popup.on("trigger-action", function(event) { if
-				  (event.action.id === "goIt") {
-				  } });*/
+    	  			
+    	  		 /*
+					 * //给template添加事件 var popup = view.popup;
+					 * popup.on("trigger-action", function(event) { if
+					 * (event.action.id === "goIt") { } });
+					 */
 				 
     	  		},
     	  		error : function() {
@@ -223,13 +226,18 @@ function ajax_addNote(layer,showPoi,btn){
 	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
 	  		async:false,
 	  		success : function(data) {
-	  			// 这里的数据是jsonArray
-	  			for(var i=0;i<data.length;i++){
-	  				showPoi(data[i]);
+	  			alert(data);
+	  			if(data==0){
+	  				alert('未登录，无法评论!');
+	  			}else{
+		  			// 这里的数据是jsonArray
+		  			for(var i=0;i<data.length;i++){
+		  				showPoi(data[i]);
+		  			}
 	  			}
 	  		},
 	  		error : function(b) {
-	  			console.log(b);
+	  			alert("错误!");
 	  		}
 	  	});
 		$(".esri-popup").empty();

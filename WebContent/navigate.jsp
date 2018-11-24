@@ -14,10 +14,10 @@
 			interval : 5000
 		})
 		$("ul li:eq(3)").click(function() {
-			$(location).attr('href', '${path }/pict/ImagePage');
+			window.open('${path }/pict/ImagePage','_blank');
 		})
 		$("ul li:eq(4)").click(function() {
-			$(location).attr('href', '${path }/pict/mapPage');
+			window.open('${path }/pict/mapPage','_blank');
 		})
 	})
 </script>

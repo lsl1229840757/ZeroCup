@@ -7,8 +7,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>电子相册</title>
-<script src="outerjs/stopExecutionOnTimeout.js" type="text/javascript"></script>
-<script src="outerjs/mouse.js" type="text/javascript"></script>
+<script src="${path }/outerjs/stopExecutionOnTimeout.js" type="text/javascript"></script>
+<script src="${path }/outerjs/mouse.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
 	function addPage(page, book) {
@@ -33,7 +33,7 @@ $(function(){
 			img.appendTo($('.flipbook .p'+page));
 		});
 
-		img.attr('src', 'images/' +  (page-2) + '.jpg');
+		img.attr('src', '${path }/images/' +  (page-2) + '.jpg');
 
 	}
 	
@@ -66,9 +66,9 @@ $(function(){
 	// Load the HTML4 version if there's not CSS transform
 	yepnope({
 		test : Modernizr.csstransforms,
-		yep: ['outerjs/turn.js'],
-		nope: ['outerjs/turn.html4.min.js'],
-		both: ['outercss/basic.css'],
+		yep: ['${path }/outerjs/turn.js'],
+		nope: ['${path }/outerjs/turn.html4.min.js'],
+		both: ['${path }/outercss/basic.css'],
 		complete: loadApp
 	});
 	$(document).keydown(function(e){
@@ -96,7 +96,7 @@ $(function(){
 	left:0;
 	width:100%;
 	height:100%;
-	background-image:url(images/right-border.png);
+	background-image:url(${path }/images/right-border.png);
 	background-position:right top;
 	background-repeat: repeat-y;
 }
@@ -107,7 +107,7 @@ $(function(){
 	left:0;
 	width:100%;
 	height:100%;
-	background-image:url(images/left-border.png);
+	background-image:url(${path }/images/left-border.png);
 	background-position:left top;
 	background-repeat: repeat-y;
 }
@@ -126,7 +126,7 @@ $(function(){
 }
 
 .flipbook .hard {
-	background-image:url(images/covers.jpg);
+	background-image:url(${path }/images/covers.jpg);
 	background-size: cover;  
 	-webkit-background-size: cover; 
 	-moz-background-size: cover; 

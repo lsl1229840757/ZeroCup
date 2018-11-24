@@ -5,6 +5,7 @@ import java.util.Collection;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
+import net.sf.json.processors.JsonBeanProcessor;
 
 /**
  * 

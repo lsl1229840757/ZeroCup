@@ -31,11 +31,10 @@ public class NoteServiceImpl extends BaseServiceImpl<Note, NoteQuery> implements
 	}
 
 	@Override
-	public void saveNote(String content, Integer poiId,String name) {
+	public void saveNote(String content, Integer poiId,User user) {
 		Note note = new Note();
 		note.setContent(content);
 		Poi poi = poiDao.getObjById(poiId);
-		User user = userDao.getUserByUsername(name);
 		note.setUser(user);
 		user.getNotes().add(note);
 		poi.getNotes().add(note); //这里便会级联更新
