@@ -153,11 +153,11 @@ require([
     		    function setBtn(){
     		    	
     		    	var btn = "<button class='btn btn-primary' id='mybtn' type='button' " +
-    		    			"data-toggle='collapse' data-target='#collapseExample' " +
-    		    			"aria-expanded='false' aria-controls='collapseExample'>" +
+    		    			"data-toggle='collapse' data-target='#collapseUse' " +
+    		    			"aria-expanded='false' aria-controls='collapseUse'>" +
     		    			"评论</button>" +
-    		    			"<div class='collapse' id='collapseExample'>" +
-    		    			"<textArea class='well form-control' rows='3'></textArea><button poiId='"+poi.id+"'class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
+    		    			"<div class='collapse' id='collapseUse'>" +
+    		    			"<textArea class='well form-control' rows='3'></textArea><button poiId='"+poi.id+"' class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
     		    			"</button></div>";
     		    	return btn;
     		    }
@@ -231,7 +231,9 @@ function ajax_addNote(layer,showPoi,btn){
 		  			if(data[data.length-1]==1){
 		  				//未登录
 		  				flag = 1;
-		  				alert("未登录，无法评论!");
+		  				$('.alert').remove();
+		  				$('#collapseUse').prepend('<div class="alert alert-danger alert-dismissible" role="alert" style="margin-top:10px;text-align:center;">'+
+		  						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>没登陆呢，兄弟</div>');
 		  			}
 	  		},
 	  		error : function(b) {
