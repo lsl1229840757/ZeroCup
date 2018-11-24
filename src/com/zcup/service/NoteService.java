@@ -11,7 +11,7 @@ public interface NoteService extends BaseService<Note,NoteQuery>  {
 	 * 
 	 * @param content
 	 * @param poiId
-	 * @param name 没有登录功能暂时使用name来接收
+	 * @param user 获取session中的user
 	 */
 	public void saveNote(String content,Integer poiId,User user);
 }
