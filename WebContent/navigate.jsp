@@ -14,21 +14,39 @@
 			interval : 5000
 		})
 		$("ul li:eq(3)").click(function() {
-			window.open('${path }/pict/ImagePage','_blank');
+			window.open('${path }/pict/ImagePage', '_blank');
 		})
 		$("ul li:eq(4)").click(function() {
-			window.open('${path }/pict/mapPage','_blank');
+			window.open('${path }/pict/mapPage', '_blank');
 		})
+		$("ul li:eq(5)").click(function() {
+			window.open('${path }/pict/LoginPage', '_blank');
+		})
+		var array=[[path+'/poiImages/a.jpg',path+'/images/img1.jpg',path+'/images/img1.jpg',path+'/images/img1.jpg'],
+			[path+'/images/1.jpg',path+'/images/img1.jpg',path+'/images/2.jpg',path+'/images/3.jpg']];
+		$('#navMenu-items .navMenu-item').click(function(){
+			index = $(this).index('#navMenu-items .navMenu-item');
+			if(index==0){
+				$('.carousel-inner img').each(function(i){
+					$(this).attr('src',array[0][i]);
+				})
+			}
+			else if(index==1){
+				$('.carousel-inner img').each(function(i){
+					$(this).attr('src',array[1][i]);
+				})
+			}
+		})
+		
 	})
 </script>
 </head>
 <body>
 	<div class="container-fluid">
-
-		<div class="header">
+		<%-- <div class="header">
 			<img alt="" src="${path }/images/head.png">
-		</div>
-		<nav class="navbar navbar-default">
+		</div> --%>
+		<nav class="navbar navbar-default navbar-fixed-top">
 		<div id="navMenu">
 			<div id="navMenu-wrapper">
 				<div id="logo">
@@ -57,12 +75,17 @@
 					class="active"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
 			</ol>
 
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
 					<img src="${path }/images/img1.jpg" alt="...">
 					<!-- 添加描述信息 -->
+					<div class="carousel-caption">...</div>
+				</div>
+				<div class="item">
+					<img src="${path }/images/img1.jpg" alt="...">
 					<div class="carousel-caption">...</div>
 				</div>
 				<div class="item">
@@ -85,7 +108,12 @@
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="${path }/seasons.jsp"></iframe>
+		</div>
+
 	</div>
+
 	<script src="${path }/myjs/index.js"></script>
 </body>
 </html>

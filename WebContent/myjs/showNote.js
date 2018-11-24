@@ -233,7 +233,7 @@ function ajax_addNote(layer,showPoi,btn){
 		  				flag = 1;
 		  				$('.alert').remove();
 		  				$('#collapseUse').prepend('<div class="alert alert-danger alert-dismissible" role="alert" style="margin-top:10px;text-align:center;">'+
-		  						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>没登陆呢，兄弟</div>');
+		  						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>没登陆呢，兄弟<a href="'+path+'/pict/LoginPage" class="btn btn-link btn-sm active glyphicon glyphicon-link" role="button">登陆</a></div>');
 		  			}
 	  		},
 	  		error : function(b) {
