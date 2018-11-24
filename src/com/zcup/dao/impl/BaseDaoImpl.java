@@ -130,7 +130,7 @@ public abstract class BaseDaoImpl<T,Q> extends HibernateDaoSupport implements Ba
 		Session session = this.getHibernateTemplate().getSessionFactory().getCurrentSession();
 		Query query = session.createQuery(hql);	
 		setDynamicParam(query,q,exclude);
-		 totalCount = (Long) query.uniqueResult();
+		totalCount = (Long) query.uniqueResult();
 		return totalCount;
 	}
 	

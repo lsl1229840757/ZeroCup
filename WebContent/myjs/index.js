@@ -18,14 +18,3 @@ function pointerScroll(ele) {
 	})
 }
 
-// 对轮播图进行操作
-$('.slide .circle').click(function() {
-	idx = $(this).index('.slide .circle');
-	$('.slide .circle').not($(this)).removeClass('hit');
-	$(this).addClass('hit');
-	// 对图片进行操作
-	$(".slide img").fadeOut(500);
-	$(".slide img").css('src', 'images/img1.png');
-	$(".slide img").fadeIn(2000);
-})
-

@@ -6,5 +6,5 @@ import com.zcup.query.UserQuery;
 public interface UserDao extends BaseDao<User,UserQuery>{
 	public User getUserByUsername(String username);
 	
-	
+	public boolean findLogin(User user);
 }

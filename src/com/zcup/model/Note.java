@@ -5,8 +5,8 @@ public class Note {
 	private String title;
 	private String content;
 	private User user;
-	private double longitude;
-	private double latitude;
+	private Double longitude;
+	private Double latitude;
 	private Poi poi;
 	
 	public Poi getPoi() {
@@ -48,19 +48,19 @@ public class Note {
 		this.id = id;
 	}
 
-	public double getLongitude() {
+	public Double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(double longitude) {
+	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
 
-	public double getLatitude() {
+	public Double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(double latitude) {
+	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
 	}
 }

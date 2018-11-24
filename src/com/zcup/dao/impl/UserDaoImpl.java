@@ -3,6 +3,7 @@ package com.zcup.dao.impl;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.Query;
 
 import com.zcup.dao.UserDao;
 import com.zcup.model.User;
@@ -47,5 +48,19 @@ public class UserDaoImpl extends BaseDaoImpl<User,UserQuery> implements UserDao 
 			return (User) list.get(0);
 		}
 		return null;
+	}
+	@Override
+	public boolean findLogin(User user) {
+		String hql = "select count(*) from User as user where user.username=? and user.password=?";
+		Query query = this.getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery(hql);
+		query.setParameter(0, user.getUsername());
+		query.setParameter(1, user.getPassword());
+		Object obj = query.uniqueResult();
+		Integer res = ((Long)obj).intValue();
+		
+		if(res == 0) {
+			return false;
+		}
+		return true;
 	}
 }

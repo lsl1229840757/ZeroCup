@@ -21,4 +21,9 @@ public class UserServiceImpl extends BaseServiceImpl<User, UserQuery> implements
 	public User getUserByUsername(String username) {
 		return userDao.getUserByUsername(username);
 	}
+
+	@Override
+	public boolean findLogin(User user) {
+		return userDao.findLogin(user);
+	}
 }
