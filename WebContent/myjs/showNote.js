@@ -61,10 +61,6 @@ require([
        		  zoom:18
        		}, opts);
        		
-			/*
-			 * view.on("click", function(e) { alert(e.mapPoint.latitude);
-			 * alert(e.mapPoint.longitude); });
-			 */
        		var opts2 = {
 	           		  duration: 2000,
 	           		};
@@ -202,8 +198,8 @@ require([
 					 */
 				 
     	  		},
-    	  		error : function() {
-    	  			alert("error")
+    	  		error : function(a) {
+    	  			alert("error");
     	  		}
     	  	});
     	}
@@ -211,6 +207,7 @@ require([
 
 function ajax_addNote(layer,showPoi,btn){
 	var str = $(".well").val();
+	var flag = 0;
 	if(str!=null&&str!==""){
 		layer.removeAll();
 		$.ajax({
@@ -226,31 +223,34 @@ function ajax_addNote(layer,showPoi,btn){
 	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
 	  		async:false,
 	  		success : function(data) {
-	  			alert(data);
-	  			if(data==0){
-	  				alert('未登录，无法评论!');
-	  			}else{
+	  			console.log(data);
 		  			// 这里的数据是jsonArray
-		  			for(var i=0;i<data.length;i++){
+		  			for(var i=0;i<data.length-1;i++){
 		  				showPoi(data[i]);
 		  			}
-	  			}
+		  			if(data[data.length-1]==1){
+		  				//未登录
+		  				flag = 1;
+		  				alert("未登录，无法评论!");
+		  			}
 	  		},
 	  		error : function(b) {
 	  			alert("错误!");
 	  		}
 	  	});
-		$(".esri-popup").empty();
-		$(".well").val(''); 
-		var pWidth = $("#viewDiv").width();
-		// 发射弹幕
-	    var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
-	    $("#danmu").css({"color":"#"+randomColor});
-	    $("#danmu").html(str);
-	    $("#danmu").animate({left:-pWidth},10000,function(){
-	        $(this).html('');
-	        $(this).css('left',pWidth);
-	        });		
+		if(flag == 0){
+			$(".esri-popup").empty();
+			$(".well").val(''); 
+			var pWidth = $("#viewDiv").width();
+			// 发射弹幕
+		    var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
+		    $("#danmu").css({"color":"#"+randomColor});
+		    $("#danmu").html(str);
+		    $("#danmu").animate({left:-pWidth},10000,function(){
+		        $(this).html('');
+		        $(this).css('left',pWidth);
+		    });
+		}
 	}else{
 		alert("内容不能为空");
 	}

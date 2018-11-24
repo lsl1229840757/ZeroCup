@@ -1,5 +1,6 @@
 package com.zcup.service;
 
+import com.zcup.dao.PoiDao;
 import com.zcup.model.Note;
 import com.zcup.model.User;
 import com.zcup.query.NoteQuery;
@@ -12,6 +13,11 @@ public interface NoteService extends BaseService<Note,NoteQuery>  {
 	 * @param poiId
 	 * @param name 没有登录功能暂时使用name来接收
 	 */
+<<<<<<< HEAD
 	public void saveNote(String content,Integer poiId,User user);
 	
+=======
+	public void saveNote(String content,Integer poiId,String name);
+
+>>>>>>> 8a8c4d8d52838f0c1f40358df684ebcc6bf924b3
 }

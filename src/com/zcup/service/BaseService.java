@@ -4,6 +4,7 @@ import java.util.List;
 
 
 public interface BaseService<T,Q> {
+	
 
 	public void save(T t);
 	

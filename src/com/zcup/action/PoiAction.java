@@ -8,6 +8,7 @@ import java.util.Set;
 import javax.annotation.Resource;
 
 import com.opensymphony.xwork2.ActionContext;
+import org.hibernate.SessionFactory;
 import com.zcup.model.Note;
 import com.zcup.model.Poi;
 import com.zcup.model.User;
@@ -22,6 +23,9 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 public class PoiAction extends HttpBaseAction {
+	@Resource
+	SessionFactory sf;
+	
 	@Resource
 	private PoiService poiService;
 	@Resource
@@ -82,8 +86,7 @@ public class PoiAction extends HttpBaseAction {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		List<Poi> list = poiService.list();
-		System.out.println(list);
-		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] { "notes" }); // 先排除notes的集合对象
+		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] {"notes"}); // 先排除notes的集合对象
 		for (int i = 0; i < array.size(); i++) {
 			JSONObject jb = array.getJSONObject(i); // 获得每一个poiJSon
 			Set<Note> notes = list.get(i).getNotes();
@@ -104,10 +107,13 @@ public class PoiAction extends HttpBaseAction {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		User user = UserGet.getUser(session);
+		int flag = 0;
 		if(user==null) {
-			response.getWriter().write(0);
+			flag=1;
+		}else {
+			noteService.saveNote(note.getContent(), poiId, user);
 		}
-		noteService.saveNote(note.getContent(), poiId, user);
+		sf.getCurrentSession().clear(); // 解决session一级缓存问题
 		List<Poi> list = poiService.list();
 		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] { "notes" }); // 先排除notes的集合对象
 		for (int i = 0; i < array.size(); i++) {
@@ -122,6 +128,7 @@ public class PoiAction extends HttpBaseAction {
 			}
 			jb.put("notes", array2);
 		}
+		array.add(flag);
 		response.getWriter().write(array.toString());
 	}
 }
