@@ -60,10 +60,10 @@ require([
        		  target: [114.35324042896691,30.535762797065825],
        		  zoom:18
        		}, opts);
-       		/*
-			 * view.on("click", function(e) { alert(e.mapPoint.latitude);
-			 * alert(e.mapPoint.longitude); });
-			 */
+       		
+			/* view.on("click", function(e) { alert(e.mapPoint.latitude);
+			 alert(e.mapPoint.longitude); });*/
+			 
        		var opts2 = {
 	           		  duration: 2000,
 	           		};
@@ -102,8 +102,7 @@ require([
 
     		      // 类似于Map
     		    var attribute = {
-    		    		  描述: poi.description,
-    		    		  留言: poi.notes[0].content
+    		    		  描述: poi.description
     		      };
 				// 添加template的action
 				var go = { title: "评论", id: "goIt"};
@@ -199,8 +198,8 @@ require([
 				  } });*/
 				 
     	  		},
-    	  		error : function() {
-    	  			alert("error")
+    	  		error : function(a) {
+    	  			alert("error");
     	  		}
     	  	});
     	}

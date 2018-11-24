@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 
+import org.hibernate.SessionFactory;
+
 import com.zcup.model.Note;
 import com.zcup.model.Poi;
 import com.zcup.query.UserQuery;
@@ -17,6 +19,9 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 public class PoiAction extends HttpBaseAction {
+	@Resource
+	SessionFactory sf;
+	
 	@Resource
 	private PoiService poiService;
 	@Resource
@@ -70,7 +75,6 @@ public class PoiAction extends HttpBaseAction {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		List<Poi> list = poiService.list();
-		System.out.println(list);
 		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] {"notes"}); // 先排除notes的集合对象
 		for (int i = 0; i < array.size(); i++) {
 			JSONObject jb = array.getJSONObject(i); // 获得每一个poiJSon
@@ -91,6 +95,7 @@ public class PoiAction extends HttpBaseAction {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		noteService.saveNote(note.getContent(), poiId, "3245234");
+		sf.getCurrentSession().clear(); // 解决session一级缓存问题
 		List<Poi> list = poiService.list();
 		JSONArray array = JsonUtils.convert2JSONArray(list, new String[] {"notes"}); // 先排除notes的集合对象
 		for (int i = 0; i < array.size(); i++) {

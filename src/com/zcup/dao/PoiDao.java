@@ -5,4 +5,5 @@ import com.zcup.query.PoiQuery;
 
 public interface PoiDao extends BaseDao<Poi, PoiQuery>{
 
+	
 }
