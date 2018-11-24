@@ -39,7 +39,7 @@ html, body, #viewDiv {
 <title>地图</title>
 </head>
 <body>
-<button id="back" class='btn btn-primary btn-lg'>回到武大</button>
+<button id="back" class='btn btn-primary btn-lg'><s:text name="goBack"></s:text></button>
 <div id="danmu"></div>
 <div id="viewDiv" class="right"></div>
 </body>

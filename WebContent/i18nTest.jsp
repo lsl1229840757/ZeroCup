@@ -10,7 +10,7 @@
 	$(function(){
 		$("#changeLocale").change(function(){
 				$("form").submit();
-			}
+		}
 		);
 	});
 </script>
