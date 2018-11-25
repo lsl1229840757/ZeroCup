@@ -3,9 +3,11 @@
 	padding: 0px;
 }
 
+/* .navbar-default{
+	background-image: url(../navimages/head.png);
+} */
 .container-fluid{
-	padding-left:0;
-	padding-right:0;
+	background-color: #255f4c33;
 }
 @font-face {
 	font-family: "navFont";
@@ -18,15 +20,16 @@
 	margin-left: 10%;
 }
 
+<<<<<<< HEAD
 #mainIframe{
 	width: 70%;
 	height:800 px;
 	margin-left: 15%;
 }
 
-.header{
+/* .header{
 	overflow: hidden;
-}
+} */
 #logo {
 	width: 15%;
 	float: left;
@@ -114,6 +117,11 @@
 
 
 #carousel-example-generic{
-	width:70%;
+	width:80%;
 	margin: 0 auto;
+	margin-top:100px;
+}
+
+.embed-responsive-item{
+	background-color: #4682b400;
 }
