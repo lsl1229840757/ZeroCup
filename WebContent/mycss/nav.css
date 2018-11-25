@@ -20,6 +20,13 @@
 	margin-left: 10%;
 }
 
+<<<<<<< HEAD
+#mainIframe{
+	width: 70%;
+	height:800 px;
+	margin-left: 15%;
+}
+
 /* .header{
 	overflow: hidden;
 } */
@@ -46,7 +53,7 @@
 	white-space: nowrap;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
-	width:70%;
+	width:85%;
 }
 
 #menuSelector {
@@ -67,7 +74,7 @@
 }
 
 .navMenu-item{
-	width:8%;
+	width:7%;
 }
 .subtitle {
 	cursor: pointer;

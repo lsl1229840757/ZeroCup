@@ -10,9 +10,24 @@
 <link rel="stylesheet" type="text/css" href="${path }/mycss/nav.css">
 <script type="text/javascript">
 	$(function() {
+		var locale = "${sessionScope.WW_TRANS_I18N_LOCALE}"
+		if(locale=='en_US'){
+			$("#changeLocale").val('en_US');
+			$(".subtitle").css({"font-size":'12px','width':'150px','height':'20px'});
+		}else{
+			$(".subtitle").css({"font-size":'21px','width':'100px'});
+		}
 		$('.carousel').carousel({
 			interval : 5000
-		})
+		});
+		/**
+		国际化
+		*/
+		$("#changeLocale").change(function(){
+			$("form").submit();
+		});
+		
+		
 		$("ul li:eq(3)").click(function() {
 			window.open('${path }/pict/ImagePage', '_blank');
 		})
@@ -42,7 +57,6 @@
 				$('.embed-responsive-item').attr('src','${path }/majors.jsp');
 			}
 		})
-		
 	})
 </script>
 </head>
@@ -59,14 +73,19 @@
 				</div>
 				<ul id="navMenu-items">
 					<div id="menuSelector"></div>
-					<li class="navMenu-item"><span class="subtitle active">四季珞珈</span>
+					<li class="navMenu-item"><span class="subtitle active"><s:text name="the_four_seasons"></s:text></span>
 					</li>
-					<li class="navMenu-item"><span class="subtitle">学术珞珈</span></li>
-					<li class="navMenu-item"><span class="subtitle">食在珞珈</span></li>
-					<li class="navMenu-item"><span class="subtitle">相册</span></li>
-					<li class="navMenu-item"><span class="subtitle">评“珈”</span></li>
-					<li class="navMenu-item"><span class="subtitle" id="login">登陆/注册</span>
+					<li class="navMenu-item"><span class="subtitle"><s:text name="academic"></s:text></span></li>
+					<li class="navMenu-item"><span class="subtitle"><s:text name="food"></s:text></span></li>
+					<li class="navMenu-item"><span class="subtitle"><s:text name="album"></s:text></span></li>
+					<li class="navMenu-item"><span class="subtitle"><s:text name="impression"></s:text></span></li>
+					<li class="navMenu-item"><span class="subtitle" id="login"><s:text name="login_regiser"></s:text></span></li>
+					<li class="navMenu-item">
+						<form action="${path}/pict/homePage" method="post">
+							<s:select id="changeLocale" name="locales" list="#{'zh_CN':'中文','en_US':'英文'}"></s:select>
+						</form>
 					</li>
+					
 				</ul>
 			</div>
 		</div>
@@ -118,7 +137,6 @@
 		</div>
 
 	</div>
-
 	<script src="${path }/myjs/index.js"></script>
 </body>
 </html>

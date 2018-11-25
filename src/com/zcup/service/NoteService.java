@@ -14,5 +14,4 @@ public interface NoteService extends BaseService<Note,NoteQuery>  {
 	 * @param user 获取session中的user
 	 */
 	public void saveNote(String content,Integer poiId,User user);
-	
 }
