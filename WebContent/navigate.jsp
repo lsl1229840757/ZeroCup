@@ -22,6 +22,7 @@
 		$("ul li:eq(5)").click(function() {
 			window.open('${path }/pict/LoginPage', '_blank');
 		})
+		//图片数组
 		var array=[[path+'/poiImages/a.jpg',path+'/images/img1.jpg',path+'/images/img1.jpg',path+'/images/img1.jpg'],
 			[path+'/images/1.jpg',path+'/images/img1.jpg',path+'/images/2.jpg',path+'/images/3.jpg']];
 		$('#navMenu-items .navMenu-item').click(function(){
@@ -30,11 +31,15 @@
 				$('.carousel-inner img').each(function(i){
 					$(this).attr('src',array[0][i]);
 				})
+				
+				$('.embed-responsive-item').attr('src','${path }/seasons.jsp');
 			}
 			else if(index==1){
 				$('.carousel-inner img').each(function(i){
 					$(this).attr('src',array[1][i]);
 				})
+				
+				$('.embed-responsive-item').attr('src','${path }/majors.jsp');
 			}
 		})
 		
