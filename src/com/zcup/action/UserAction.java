@@ -103,9 +103,6 @@ public class UserAction extends ActionSupport {
 		this.user = user;
 	}
 
-	public String enterLogin() {
-		return super.SUCCESS;
-	}
 	public String login() {
 		primitive = user.getPassword();
 		System.out.println(primitive);

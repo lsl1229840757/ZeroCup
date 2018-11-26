@@ -3,24 +3,27 @@
 	padding: 0px;
 }
 
-.container-fluid{
-	padding-left:0;
-	padding-right:0;
+.navbar-default{
+	background-color: transparent;
 }
+.container-fluid {
+	background-color: #255f4c33;
+}
+
 @font-face {
 	font-family: "navFont";
 	src: url(../font/navFont.otf);
 }
 
 #navMenu {
-	margin-bottom:3px;
+	margin-bottom: 3px;
 	position: relative;
 	margin-left: 10%;
 }
 
-.header{
+/* .header{
 	overflow: hidden;
-}
+} */
 #logo {
 	width: 15%;
 	float: left;
@@ -44,7 +47,7 @@
 	white-space: nowrap;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
-	width:70%;
+	width: 85%;
 }
 
 #menuSelector {
@@ -64,9 +67,6 @@
 	margin-left: 3%;
 }
 
-.navMenu-item{
-	width:8%;
-}
 .subtitle {
 	cursor: pointer;
 	font-size: 21px;
@@ -78,7 +78,7 @@
 	-ms-box-sizing: content-box;
 	box-sizing: content-box;
 	border: 1px solid #444;
-	border-left-color: #000;
+	border-left-color: #400080;
 	border-radius: 5px 5px 5px 5px;
 	width: 100px;
 	text-align: center;
@@ -91,11 +91,11 @@
 	-o-animation: glow 2000ms ease-out infinite alternate;
 	-ms-animation: glow 2000ms ease-out infinite alternate;
 	animation: glow 2000ms ease-out infinite alternate;
-	background: -webkit-linear-gradient(#f0d9da, #f0d9da);
+	/* background: -webkit-linear-gradient(#f0d9da, #f0d9da);
 	background: -moz-linear-gradient(#f0d9da, #f0d9da);
 	background: -o-linear-gradient(#f0d9da, #f0d9da);
 	background: -ms-linear-gradient(#f0d9da, #f0d9da);
-	background: linear-gradient(#f0d9da, #f0d9da);
+	background: linear-gradient(#f0d9da, #f0d9da); */
 	border-color: #fbeed7;
 	box-shadow: 0 0 5px rgba(0, 255, 0, .5), inset 0 0 5px
 		rgba(0, 255, 0, .5), 0 2px 0 #ffc2e9;
@@ -106,8 +106,37 @@
 	font-size: 18px;
 }
 
-
-#carousel-example-generic{
-	width:70%;
+#carousel-example-generic {
+	width: 80%;
 	margin: 0 auto;
+	margin-top: 100px;
 }
+
+/* .embed-responsive .embed-responsive-item {
+	background-color: #4682b400;
+	height: 3000px;
+}
+
+.embed-responsive{
+	overflow: visible;
+} */
+/* 背景 */
+/* video {
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+	加滤镜
+	-webkit-filter: grayscale(100%);
+	filter:grayscale(100%);
+	z-index: -11
+}
+source {
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+} */

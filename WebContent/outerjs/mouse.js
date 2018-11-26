@@ -18,8 +18,9 @@ window.addEventListener('mousemove',
 		var mouse = {
 		    x: undefined,
 		    y: undefined };
-		
+			
 		function images(x, y, radius, vx, vy, opacity, birth, life,rotateV,dirction,theSeason){
+
 		    this.x = x;
 		    this.y = y;
 		    this.radius = radius;

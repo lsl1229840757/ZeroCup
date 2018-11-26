@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="tags.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,13 +7,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>电子相册</title>
-<link rel="bootstrap" href="${path }/outercss/bootstrap.min.css">
-<link herf="${path}/outercss/bootstrap/slider.min.css }">
-<script src="${path}/outerjs/stopExecutionOnTimeout.js" type="text/javascript"></script>
-<script src="${path}/outerjs/jquery-3.3.1.js"></script>
-<script src="${path}/outerjs/bootstrap.min.js "></script>
-<script src="${path}/outerjs/bootstrap-slider.min.js "></script>
-
+<script src="${path }/outerjs/stopExecutionOnTimeout.js" type="text/javascript"></script>
+<script src="${path }/outerjs/mouse.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
 	window.season = "0";
@@ -51,7 +46,8 @@ $(function(){
         });
 			img.appendTo($('.flipbook .p'+page));
 		});
-		img.attr('src', 'images/' +  (page-2) + '.jpg');
+
+		img.attr('src', '${path }/images/' +  (page-2) + '.jpg');
 
 	}
 	
@@ -127,9 +123,9 @@ $(function(){
 	// Load the HTML4 version if there's not CSS transform
 	yepnope({
 		test : Modernizr.csstransforms,
-		yep: ['outerjs/turn.js'],
-		nope: ['outerjs/turn.html4.min.js'],
-		both: ['outercss/basic.css'],
+		yep: ['${path }/outerjs/turn.js'],
+		nope: ['${path }/outerjs/turn.html4.min.js'],
+		both: ['${path }/outercss/basic.css'],
 		complete: loadApp
 	});
 	$(document).keydown(function(e){
@@ -155,7 +151,7 @@ $(function(){
 	left:0;
 	width:100%;
 	height:100%;
-	background-image:url(images/right-border.png);
+	background-image:url(${path }/images/right-border.png);
 	background-position:right top;
 	background-repeat: repeat-y;
 }
@@ -166,7 +162,7 @@ $(function(){
 	left:0;
 	width:100%;
 	height:100%;
-	background-image:url(images/left-border.png);
+	background-image:url(${path }/images/left-border.png);
 	background-position:left top;
 	background-repeat: repeat-y;
 }
@@ -185,7 +181,7 @@ $(function(){
 }
 
 .flipbook .hard {
-	background-image:url(images/covers.jpg);
+	background-image:url(${path }/images/covers.jpg);
 	background-size: cover;  
 	-webkit-background-size: cover; 
 	-moz-background-size: cover; 

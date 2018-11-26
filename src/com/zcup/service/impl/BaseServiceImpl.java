@@ -11,6 +11,14 @@ public class BaseServiceImpl<T,Q> implements BaseService<T,Q> {
 
 	public BaseDao<T,Q> baseDao;
 	
+	public BaseDao<T, Q> getBaseDao() {
+		return baseDao;
+	}
+
+	public void setBaseDao(BaseDao<T, Q> baseDao) {
+		this.baseDao = baseDao;
+	}
+
 	@Override
 	public void save(T t) {
 		baseDao.saveObj(t);

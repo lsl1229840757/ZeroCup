@@ -31,14 +31,15 @@ html, body, #viewDiv {
 </script>
 <link rel="stylesheet" href="${path }/mycss/arcmap.css">
 <script type="text/javascript">
-
-
+	var user = "${sessionScope.user}";
+		$('#mybtn').remove();
+		$('#collapseExample').remove();
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>地图</title>
 </head>
 <body>
-<button id="back" class='btn btn-primary btn-lg'>回到武大</button>
+<button id="back" class='btn btn-primary btn-lg'><s:text name="goBack"></s:text></button>
 <div id="danmu"></div>
 <div id="viewDiv" class="right"></div>
 </body>

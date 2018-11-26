@@ -60,10 +60,7 @@ require([
        		  target: [114.35324042896691,30.535762797065825],
        		  zoom:18
        		}, opts);
-       		/*
-			 * view.on("click", function(e) { alert(e.mapPoint.latitude);
-			 * alert(e.mapPoint.longitude); });
-			 */
+       		
        		var opts2 = {
 	           		  duration: 2000,
 	           		};
@@ -103,7 +100,6 @@ require([
     		      // 类似于Map
     		    var attribute = {
     		    		  描述: poi.description,
-    		    		  留言: poi.notes[0].content
     		      };
 				// 添加template的action
 				var go = { title: "评论", id: "goIt"};
@@ -155,12 +151,13 @@ require([
     		    }
     			
     		    function setBtn(){
+    		    	
     		    	var btn = "<button class='btn btn-primary' id='mybtn' type='button' " +
-    		    			"data-toggle='collapse' data-target='#collapseExample' " +
-    		    			"aria-expanded='false' aria-controls='collapseExample'>" +
+    		    			"data-toggle='collapse' data-target='#collapseUse' " +
+    		    			"aria-expanded='false' aria-controls='collapseUse'>" +
     		    			"评论</button>" +
-    		    			"<div class='collapse' id='collapseExample'>" +
-    		    			"<textArea class='well form-control' rows='3'></textArea><button poiId='"+poi.id+"'class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
+    		    			"<div class='collapse' id='collapseUse'>" +
+    		    			"<textArea class='well form-control' rows='3'></textArea><button poiId='"+poi.id+"' class='btn btn-success' onclick='ajax_addNote(gl_layer,gl_showPoi,this)' >提交" +
     		    			"</button></div>";
     		    	return btn;
     		    }
@@ -193,14 +190,16 @@ require([
     	  			for(var i=0;i<data.length;i++){
     	  				showPoi(data[i]);
     	  			}
-    	  		 /* //给template添加事件 var popup = view.popup;
-				  popup.on("trigger-action", function(event) { if
-				  (event.action.id === "goIt") {
-				  } });*/
+    	  			
+    	  		 /*
+					 * //给template添加事件 var popup = view.popup;
+					 * popup.on("trigger-action", function(event) { if
+					 * (event.action.id === "goIt") { } });
+					 */
 				 
     	  		},
-    	  		error : function() {
-    	  			alert("error")
+    	  		error : function(a) {
+    	  			alert("error");
     	  		}
     	  	});
     	}
@@ -208,6 +207,7 @@ require([
 
 function ajax_addNote(layer,showPoi,btn){
 	var str = $(".well").val();
+	var flag = 0;
 	if(str!=null&&str!==""){
 		layer.removeAll();
 		$.ajax({
@@ -223,26 +223,37 @@ function ajax_addNote(layer,showPoi,btn){
 	  		contentType :'application/x-www-form-urlencoded; charset=UTF-8',
 	  		async:false,
 	  		success : function(data) {
-	  			// 这里的数据是jsonArray
-	  			for(var i=0;i<data.length;i++){
-	  				showPoi(data[i]);
-	  			}
+	  			console.log(data);
+		  			// 这里的数据是jsonArray
+		  			for(var i=0;i<data.length-1;i++){
+		  				showPoi(data[i]);
+		  			}
+		  			if(data[data.length-1]==1){
+		  				//未登录
+		  				flag = 1;
+		  				$('.alert').remove();
+		  				$('#collapseUse').prepend('<div class="alert alert-danger alert-dismissible" role="alert" style="margin-top:10px;text-align:center;">'+
+		  						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>没登陆呢，兄弟&emsp;&emsp;<a href = "'+path+'/pict/LoginPage" class = "login btn btn-warning active btn-sm glyphicon glyphicon-link" role="button">登录</a></div>');
+		  			}
 	  		},
 	  		error : function(b) {
 	  			console.log(b);
+	  			alert("错误!");
 	  		}
 	  	});
-		$(".esri-popup").empty();
-		$(".well").val(''); 
-		var pWidth = $("#viewDiv").width();
-		// 发射弹幕
-	    var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
-	    $("#danmu").css({"color":"#"+randomColor});
-	    $("#danmu").html(str);
-	    $("#danmu").animate({left:-pWidth},10000,function(){
-	        $(this).html('');
-	        $(this).css('left',pWidth);
-	        });		
+		if(flag == 0){
+			$(".esri-popup").empty();
+			$(".well").val(''); 
+			var pWidth = $("#viewDiv").width();
+			// 发射弹幕
+		    var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
+		    $("#danmu").css({"color":"#"+randomColor});
+		    $("#danmu").html(str);
+		    $("#danmu").animate({left:-pWidth},10000,function(){
+		        $(this).html('');
+		        $(this).css('left',pWidth);
+		    });
+		}
 	}else{
 		alert("内容不能为空");
 	}
