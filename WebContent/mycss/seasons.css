@@ -1,8 +1,96 @@
 .seasons{
 	width:90%;
 	margin:0 auto;
+	height:2800px;
 }
 
+.season{
+	width:90%;
+	margin:0 auto;
+}
 body{
 	background-color: #4682b400;
+}
+
+p {
+	margin: 0 0 20px 0;	
+	font-family:"Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-size-adjust:0.488;
+	font-weight:200;
+	font-style:normal;
+}
+
+img{
+	border: 0;
+}
+
+h1 {
+	font-family:"Museo 900", Verdana, serif;
+	font-size-adjust:0.40;
+	font-weight:700;
+	font-style:normal;
+}
+
+h2{
+	font-family:"Beau Sans Pro Book", Verdana, sans-serif;
+	font-size-adjust:0.531;
+	font-weight:500;
+	font-style:normal;
+}
+
+.float-left{
+	float: left;	
+	margin: 0 0 0 20px;
+}
+
+.float-right{
+	float: right;
+	margin: 0 20px 0 0;
+}
+
+
+#spring{
+	background:url("../seasonImage/spring.png") 50% 0 no-repeat fixed;
+	background-size: cover;
+	color: white;
+	height: 650px;
+	margin: 0 auto;
+	padding: 0;
+}
+#summer{
+	background: url("../seasonImage/summer.png") 50% 0 no-repeat fixed;
+	color: white;
+	background-size: cover;
+	height: 650px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#autumn{
+	background: url("../seasonImage/autumn.png") 50% 0 no-repeat fixed;
+	color: white;
+	background-size: cover;
+	height: 650px;
+	padding: 100px 0 0 0;	
+}
+
+#winter{
+	background: url("../seasonImage/a.png") 50% 0 no-repeat fixed;
+	color: white;
+	background-size: cover;
+	height: 650px;
+	padding: 100px 0 0 0;	
+}
+
+.description{
+	margin: 0 auto;
+	min-width: 980px;
+	overflow: auto;
+	width: 980px;
+}
+
+.description .float-left, .description .float-right{
+	padding: 100px 0 0 0;
+	position: relative;
+	width: 350px;	
 }

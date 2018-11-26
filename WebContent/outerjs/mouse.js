@@ -18,8 +18,6 @@ window.addEventListener('mousemove',
 		    x: undefined,
 		    y: undefined };
 		 
-
-		 
 		function Circle(x, y, radius, vx, vy, rgb, opacity, birth, life) {
 		    this.x = x;
 		    this.y = y;
