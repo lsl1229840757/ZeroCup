@@ -1,8 +1,20 @@
-.majors{
+.science .page-header h1{
+	font-family: persFont;
+	font-size:50px;
+	color: #bf5e67;
+}
+
+.science{
 	width:90%;
 	margin:0 auto;
 }
 
-body{
-	background-color: #4682b400;
+
+.science h2, .science h2{
+	font-family: desFont;
+	font-size: 30px;	
+}
+
+.literature{
+	margin-left: 30px;
 }

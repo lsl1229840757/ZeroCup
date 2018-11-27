@@ -7,7 +7,8 @@
 	background-color: transparent;
 }
 .container-fluid {
-	background-color: #255f4c33;
+	background-size: cover;
+	background-image: url(../testImage/nav.jpg);
 }
 
 @font-face {
@@ -15,6 +16,15 @@
 	src: url(../font/navFont.otf);
 }
 
+@font-face {
+	font-family: "desFont";
+	src: url(../font/雲書法一駿山石水墨繁.ttf);
+}
+
+@font-face {
+	font-family: "persFont";
+	src: url(../font/李旭科书法1.4.ttf);
+}
 #navMenu {
 	margin-bottom: 3px;
 	position: relative;
@@ -25,16 +35,22 @@
 	overflow: hidden;
 } */
 #logo {
-	width: 15%;
+	/* width: 15%; */
 	float: left;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 
-#logo img {
+#logo h1{
+	font-family: persFont;
+	font-size: 50px;
+	margin-top: 10px;
+	color: #fcc339;
+}
+/* #logo img {
 	max-width: 100%;
 	height: auto;
 }
-
+ */
 #navMenu #navMenu-wrapper {
 	height: 60px;
 	padding: 0 30px;
@@ -106,10 +122,21 @@
 	font-size: 18px;
 }
 
-#carousel-example-generic {
-	width: 80%;
+#carousel-generic {
+	width: 85%;
 	margin: 0 auto;
 	margin-top: 100px;
+}
+
+.item{
+	width:100%;
+	height:650px;
+}
+
+.item img{
+	max-width: 100%;
+	width:100%;
+	height: 100%;
 }
 
 /* .embed-responsive .embed-responsive-item {
