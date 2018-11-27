@@ -139,14 +139,10 @@
 	height: 100%;
 }
 
-/* .embed-responsive .embed-responsive-item {
-	background-color: #4682b400;
-	height: 3000px;
+.embed-responsive .embed-responsive-item {
+	background-color: transparent;
 }
 
-.embed-responsive{
-	overflow: visible;
-} */
 /* 背景 */
 /* video {
 	position: fixed;

@@ -18,6 +18,10 @@
 	src="${path }/outerjs/jquery.scrollTo-1.4.2-min.js"></script>
 <script type="text/javascript">
 	$(function() {
+		var user = "${sessionScope.user}";
+		if(user!=null){
+			$("#login").hide();
+		}
 		var locale = "${sessionScope.WW_TRANS_I18N_LOCALE}"
 		if (locale == 'en_US') {
 			$("#changeLocale").val('en_US');
@@ -57,9 +61,9 @@
 			$("form").submit();
 		});
 
-		$("ul li:eq(2)").click(function() {
+		/* $("ul li:eq(2)").click(function() {
 			window.open('${path }/pict/ImagePage', '_blank');
-		})
+		}) */
 		$("ul li:eq(3)").click(function() {
 			window.open('${path }/pict/mapPage', '_blank');
 		})
@@ -87,6 +91,8 @@
 				})
 				$(".science").css('display', 'none');
 				$(".seasons").css('display', 'block');
+				$(".embed-responsive").css('display', 'none');
+				$("#carousel-generic").css('display','block');
 			} else if (index == 1) {
 				$('.carousel-inner img').each(function(i) {
 					$(this).attr('src', array[1][i]);
@@ -94,6 +100,13 @@
 				//切换展示主题
 				$(".science").css('display', 'block');
 				$(".seasons").css('display', 'none');
+				$(".embed-responsive").css('display', 'none');
+				$("#carousel-generic").css('display','block');
+			} else if (index == 2) {
+				$(".science").css('display', 'none');
+				$(".seasons").css('display', 'none');
+				$(".embed-responsive").css('display', 'block');
+				$("#carousel-generic").css('display','none');
 			}
 		})
 	})
@@ -328,7 +341,7 @@
 							<img src="${path }/scienceImage/agriculture2.jpg" alt="..."
 								class="img-responsive img-thumbnail">
 						</div>
-					
+
 						<div class="col-sm-4 col-md-9" style="margin-left: 15%;">
 							<img src="${path }/scienceImage/agriculture3.jpg" alt="..."
 								class="img-responsive img-thumbnail">
@@ -360,6 +373,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="embed-responsive embed-responsive-16by9"
+			style="display: none; background-color: transparent;">
+			<iframe class="embed-responsive-item" src="${path }/bookPic.jsp"></iframe>
 		</div>
 	</div>
 	<script src="${path }/myjs/index.js"></script>
