@@ -75,7 +75,7 @@ h2{
 }
 
 #winter{
-	background: url("../seasonImage/a.png") 50% 0 no-repeat fixed;
+	background: url("../seasonImage/win.png") 50% 0 no-repeat fixed;
 	color: white;
 	background-size: cover;
 	height: 650px;
@@ -90,7 +90,7 @@ h2{
 }
 
 .description .float-left, .description .float-right{
-	padding: 100px 0 0 0;
+	padding: 80px 0 0 0;
 	position: relative;
-	width: 350px;	
+	width: 400px;	
 }

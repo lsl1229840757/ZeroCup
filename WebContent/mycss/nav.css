@@ -7,7 +7,8 @@
 	background-color: transparent;
 }
 .container-fluid {
-	background-color: #255f4c33;
+	background-size: cover;
+	background-image: url(../testImage/nav.jpg);
 }
 
 @font-face {
@@ -25,16 +26,16 @@
 	overflow: hidden;
 } */
 #logo {
-	width: 15%;
+	/* width: 15%; */
 	float: left;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 
-#logo img {
+/* #logo img {
 	max-width: 100%;
 	height: auto;
 }
-
+ */
 #navMenu #navMenu-wrapper {
 	height: 60px;
 	padding: 0 30px;
@@ -107,7 +108,7 @@
 }
 
 #carousel-example-generic {
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 	margin-top: 100px;
 }

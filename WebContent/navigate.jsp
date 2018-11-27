@@ -104,7 +104,9 @@
 		<div id="navMenu">
 			<div id="navMenu-wrapper">
 				<div id="logo">
-					<img alt="" src="${path }/images/logo.png">
+					<h2>
+						<b>珞珈印象</b>
+					</h2>
 				</div>
 				<ul id="navMenu-items">
 					<div id="menuSelector"></div>
@@ -177,30 +179,18 @@
 			<div id="spring">
 				<div class="description">
 					<div class="float-left">
-						<h2>(Almost) Static Background</h2>
-						<p>This section has a background that moves slightly slower
-							than the user scrolls. This is achieved by changing the top
-							position of the background for every pixel the page is scrolled.</p>
+						<h2 class='text-info'>春天的珞珈</h2>
+						<h4>微风不定，幽香成径，红云十里波千顷</h4>
+						<footer>元代<cite title="Source Title">刘时中</cite></footer>
 					</div>
 				</div>
 			</div>
 			<div id="summer">
 				<div class="description">
 					<div class="float-right">
-						<h2>Multiple Backgrounds</h2>
-						<p>The multiple backgrounds applied to this section are moved
-							in a similar way to the first section -- every time the user
-							scrolls down the page by a pixel, the positions of the
-							backgrounds are changed.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Aenean nibh erat, sagittis sit amet congue at, aliquam eu libero.
-							Integer molestie, turpis vel ultrices facilisis, nisi mauris
-							sollicitudin mauris, volutpat elementum enim urna eget odio.
-							Donec egestas aliquet facilisis. Nunc eu nunc eget neque ornare
-							fringilla. Nam vel sodales lectus. Nulla in pellentesque eros.
-							Donec ultricies, enim vitae varius cursus, risus mauris iaculis
-							neque, euismod sollicitudin metus erat vitae sapien. Sed
-							pulvinar.</p>
+						<h2 class='text-info'>夏天的珞珈</h2>
+						<h4>明月别枝惊鹊，清风半夜鸣蝉。</h4>
+						<footer>宋代<cite title="Source Title">辛弃疾</cite></footer>
 					</div>
 				</div>
 
@@ -209,24 +199,18 @@
 			<div id="autumn">
 				<div class="description">
 					<div class="float-left">
-						<h2>What Happens When JavaScript is Disabled?</h2>
-						<p>The user gets a slap! Actually, all that jQuery does is
-							moves the backgrounds relative to the position of the scrollbar.
-							Without it, the backgrounds simply stay put and the user would
-							never know they are missing out on the awesome! CSS2 does a good
-							enough job to still make the effect look cool.</p>
+						<h3 class='text-info'>秋天的珞珈</h3>
+						<h4>天阶夜色凉如水，卧看牵牛织女星</h4>
+						<footer>唐代<cite title="Source Title">杜牧</cite></footer>
 					</div>
 				</div>
 			</div>
 			<div id="winter">
 				<div class="description">
-					<div class="float-left">
-						<h2>What Happens When JavaScript is Disabled?</h2>
-						<p>The user gets a slap! Actually, all that jQuery does is
-							moves the backgrounds relative to the position of the scrollbar.
-							Without it, the backgrounds simply stay put and the user would
-							never know they are missing out on the awesome! CSS2 does a good
-							enough job to still make the effect look cool.</p>
+					<div class="float-right">
+						<h3 class='text-info'>冬天的珞珈</h3>
+						<h4>一声画角谯门，半庭新月黄昏，雪里山前水滨</h4>
+						<footer>元代<cite title="Source Title">白朴</cite></footer>
 					</div>
 				</div>
 			</div>
@@ -236,38 +220,31 @@
 				<div class="panel-heading">
 					<blockquote>
 						<h3 class='text-info'>春天的珞珈</h3>
-						<p>微风不定，幽香成径，红云十里波千顷。</p>
+						<p>微风不定，幽香成径，红云十里波千顷</p>
 						<footer>元代<cite title="Source Title">刘时中</cite></footer>
 					</blockquote>
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-sm-4 col-md-4">
-							<div class="thumbnail">
-								<img src="${path }/navimages/test.jpeg" alt="..."
-									class="img-responsive">
-								<div class="caption">
-									<p>...</p>
-								</div>
-							</div>
+						<div class="col-sm-4 col-md-6" style="padding-top: 50px;">
+							<img src="${path }/seasonImage/spring2.png" alt="..."
+								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-4">
-							<div class="thumbnail">
-								<img src="${path }/navimages/test.jpeg" alt="..."
-									class="img-responsive">
-								<div class="caption">
-									<p>...</p>
-								</div>
-							</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/seasonImage/spring5.png" alt="..."
+								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-4">
-							<div class="thumbnail">
-								<img src="${path }/navimages/test.jpeg" alt="..."
-									class="img-responsive">
-								<div class="caption">
-									<p>...</p>
-								</div>
-							</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/seasonImage/spring4.png" alt="..."
+								class="img-responsive img-thumbnail">
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/seasonImage/spring3.png" alt="..."
+								class="img-responsive img-thumbnail">
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/seasonImage/spring.png" alt="..."
+								class="img-responsive img-thumbnail">
 						</div>
 					</div>
 				</div>
@@ -364,34 +341,24 @@
 					</blockquote>
 				</div>
 				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-4 col-md-4">
-							<div class="thumbnail">
-								<img src="${path }/navimages/test.jpeg" alt="..."
-									class="img-responsive">
-								<div class="caption">
-									<p>...</p>
-								</div>
-							</div>
+						<div class="row">
+						<div class="col-sm-4 col-md-6" style="padding-top: 20px;">
+							<img src="${path }/seasonImage/win.png" alt="..."
+								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-4">
-							<div class="thumbnail">
-								<img src="${path }/navimages/test.jpeg" alt="..."
-									class="img-responsive">
-								<div class="caption">
-									<p>...</p>
-								</div>
-							</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/seasonImage/winter2.jpg" alt="..."
+								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-4">
-							<div class="thumbnail">
-								<img src="${path }/navimages/test.jpeg" alt="..."
-									class="img-responsive">
-								<div class="caption">
-									<p>...</p>
-								</div>
-							</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/seasonImage/winter3.jpg" alt="..."
+								class="img-responsive img-thumbnail">
 						</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/seasonImage/winter4.jpg" alt="..."
+								class="img-responsive img-thumbnail">
+						</div>
+					
 					</div>
 				</div>
 			</div>
