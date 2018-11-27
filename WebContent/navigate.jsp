@@ -56,6 +56,7 @@
 			$("form").submit();
 		});
 
+		
 		$("ul li:eq(2)").click(function() {
 			window.open('${path }/pict/ImagePage', '_blank');
 		})
@@ -81,6 +82,8 @@
 
 						$('.embed-responsive-item').attr('src',
 								'${path }/seasons.jsp');
+						$(".science").css('display','none'); 
+						$(".seasons").css('display','block');
 					} else if (index == 1) {
 						$('.carousel-inner img').each(function(i) {
 							$(this).attr('src', array[1][i]);
@@ -88,6 +91,8 @@
 
 						$('.embed-responsive-item').attr('src',
 								'${path }/majors.jsp');
+						$(".science").css('display','block'); 
+						$(".seasons").css('display','none');
 					}
 				})
 	})
@@ -95,11 +100,6 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<%-- <video autoplay loop="loop" muted='false'> <source
-			src="${path }/background/spring.mp4" type="video/mp4"></video> --%>
-		<%-- <div class="header">
-			<img alt="" src="${path }/images/head.png">
-		</div> --%>
 		<nav class="navbar navbar-default navbar-fixed-top">
 		<div id="navMenu">
 			<div id="navMenu-wrapper">
@@ -231,13 +231,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="season">
+		<div class="science" style="display:none">
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<blockquote>
-						<h3 class='text-info'>春天的珞珈</h3>
-						<p>微风不定，幽香成径，红云十里波千顷。</p>
-						<footer>元代<cite title="Source Title">刘时中</cite></footer>
+						<h3 class='text-info'>文</h3>
+						<p>笔落惊风雨,诗成泣鬼神。</p>
+						<footer>唐代&emsp;<cite title="Source Title">杜甫</cite></footer>
 					</blockquote>
 				</div>
 				<div class="panel-body">
@@ -276,9 +276,8 @@
 			<div class="panel panel-success">
 				<div class="panel-heading">
 					<blockquote>
-						<h3 class='text-info'>夏天的珞珈</h3>
-						<p>明月别枝惊鹊，清风半夜鸣蝉。</p>
-						<footer>宋代<cite title="Source Title">辛弃疾</cite></footer>
+						<h3 class='text-info'>法</h3>
+						<p>无念为之本，一念为之意，二念为之德，三念为之法。</p>
 					</blockquote>
 				</div>
 				<div class="panel-body">
@@ -317,9 +316,8 @@
 			<div class="panel panel-warning">
 				<div class="panel-heading">
 					<blockquote>
-						<h3 class='text-info'>秋天的珞珈</h3>
-						<p>天阶夜色凉如水，卧看牵牛织女星</p>
-						<footer>唐代<cite title="Source Title">杜牧</cite></footer>
+						<h3 class='text-info'>理</h3>
+						<p>在我看来这时间的美丽有两种，一是深刻又动人的方程，一是你泛着倦意淡淡的笑容。</p>
 					</blockquote>
 				</div>
 				<div class="panel-body">
@@ -358,9 +356,86 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<blockquote>
-						<h3 class='text-info'>冬天的珞珈</h3>
-						<p>一声画角谯门，半庭新月黄昏，雪里山前水滨</p>
-						<footer>元代<cite title="Source Title">白朴</cite></footer>
+						<h3 class='text-info'>工</h3>
+						<p>国之重器，大国工匠！</p>
+					</blockquote>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-4 col-md-4">
+							<div class="thumbnail">
+								<img src="${path }/navimages/test.jpeg" alt="..."
+									class="img-responsive">
+								<div class="caption">
+									<p>...</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-4">
+							<div class="thumbnail">
+								<img src="${path }/navimages/test.jpeg" alt="..."
+									class="img-responsive">
+								<div class="caption">
+									<p>...</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-4">
+							<div class="thumbnail">
+								<img src="${path }/navimages/test.jpeg" alt="..."
+									class="img-responsive">
+								<div class="caption">
+									<p>...</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="panel panel-default">
+				<div class="panel-heading">
+					<blockquote>
+						<h3 class='text-info'>农</h3>
+						<p>农业乃立家之本，商贸乃强国之途，军队乃护国之剑。农业乃立家之本，商贸乃强国之途，军队乃护国之剑。</p>
+					</blockquote>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-4 col-md-4">
+							<div class="thumbnail">
+								<img src="${path }/navimages/test.jpeg" alt="..."
+									class="img-responsive">
+								<div class="caption">
+									<p>...</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-4">
+							<div class="thumbnail">
+								<img src="${path }/navimages/test.jpeg" alt="..."
+									class="img-responsive">
+								<div class="caption">
+									<p>...</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-4">
+							<div class="thumbnail">
+								<img src="${path }/navimages/test.jpeg" alt="..."
+									class="img-responsive">
+								<div class="caption">
+									<p>...</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="panel panel-default">
+				<div class="panel-heading">
+					<blockquote>
+						<h3 class='text-info'>医</h3>
+						<p> 悬壶济世医苍生, 妙手回春解疾疼。</p>
 					</blockquote>
 				</div>
 				<div class="panel-body">
