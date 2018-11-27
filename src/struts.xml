@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<!-- 这里是开发者模式，以后需要false -->
-	<constant name="struts.devMode" value="true"></constant>
+	<!-- <constant name="struts.devMode" value="true"></constant> -->
 	<!-- 配置国际化资源文件的参数 ,这个属性在default。properties中可以找到 -->
 	<constant name="struts.custom.i18n.resources"
 		value="com/zcup/resource/msg"></constant>

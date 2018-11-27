@@ -113,9 +113,9 @@
 	background: -ms-linear-gradient(#f0d9da, #f0d9da);
 	background: linear-gradient(#f0d9da, #f0d9da); */
 	border-color: #fbeed7;
-	box-shadow: 0 0 5px rgba(0, 255, 0, .5), inset 0 0 5px
-		rgba(0, 255, 0, .5), 0 2px 0 #ffc2e9;
-	color: #f3c3c3;
+	box-shadow: 0 0 5px #7b0a1ef7, inset 0 0 5px
+		#7b0a1ef7, 0 2px 0 #ffc2e9;
+	color: #ef570b;
 }
 
 #login {
