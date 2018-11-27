@@ -2,6 +2,7 @@ $(function(){var canvas = document.getElementById("mouseCanvas");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 c = canvas.getContext('2d');
+
 window.addEventListener('mousemove',
 		function (event) {
 		    mouse.x = event.x;
@@ -17,8 +18,9 @@ window.addEventListener('mousemove',
 		var mouse = {
 		    x: undefined,
 		    y: undefined };
-		 
-		function Circle(x, y, radius, vx, vy, rgb, opacity, birth, life) {
+			
+		function images(x, y, radius, vx, vy, opacity, birth, life,rotateV,dirction,theSeason){
+
 		    this.x = x;
 		    this.y = y;
 		    this.radius = radius;
@@ -28,20 +30,44 @@ window.addEventListener('mousemove',
 		    this.birth = birth;
 		    this.life = life;
 		    this.opacity = opacity;
-		 
+		    this.season = theSeason;
+		    this.dirction = dirction;
+		    
 		    this.draw = function () {
-		        c.beginPath();
-		        c.arc(this.x, this.y, this.radius, Math.PI * 2, false);
-		        c.fillStyle = 'rgba(' + rgb + ',' + this.opacity + ')';
-		        c.fill();
+		    	//TODO
+		    	//旋转
+		    	c.save();
+		    	c.translate(this.x,this.y);
+		    	c.rotate(rotateV*(frame - birth)*dirction);
+		    	switch (this.season){
+		    	case "0":
+		    		c.drawImage(springImg,-this.radius/2,-this.radius/2,this.radius,radius);
+		    		break;
+		    	case "1":
+		    		c.drawImage(summerImg,-this.radius/2,-this.radius/2,this.radius,radius);
+		    		break;
+		    	case "2":
+		    		c.drawImage(autumnImg,-this.radius/2,-this.radius/2,this.radius,radius);
+		    		break;
+		    	case "3":
+		    		c.drawImage(winterImg,-this.radius/2,-this.radius/2,this.radius,radius);
+		    		break;
+		    	}
+				//风吹效果
+				c.restore();
+		    /*	c.save();
+		    	c.translate(this.x,0);
+		    	c.rotate(rotateV*(frame - birth));
+				c.drawImage(winterImg,this.x,this.y,this.radius,radius);
+				c.restore();*/
 		    };
 		 
 		    this.update = function () {
-		        if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+		        if (this.x + this.radius*0.35 > innerWidth || this.x - this.radius*0.35 < 0) {
 		            this.vx = -this.vx;
 		        }
 		 
-		        if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+		        if (this.y + this.radius*0.35 > innerHeight || this.y - this.radius*0.35 < 0) {
 		            this.vy = -this.vy;
 		        }
 		 
@@ -49,7 +75,6 @@ window.addEventListener('mousemove',
 		        this.y += this.vy;
 		 
 		        this.opacity = 1 - (frame - this.birth) * 1 / this.life;
-		 
 		        if (frame > this.birth + this.life) {
 		            for (var i = 0; i < circleArray.length; i++) {
 		                if (this.birth == circleArray[i].birth && this.life == circleArray[i].life) {
@@ -63,7 +88,7 @@ window.addEventListener('mousemove',
 		    };
 		 
 		}
-		 
+		
 		var circleArray = [];
 		 
 		function initCanvas() {
@@ -77,15 +102,25 @@ window.addEventListener('mousemove',
 		 
 		 
 		function drawCircles() {
-		    for (var i = 0; i < 6; i++) {
-		        var radius = Math.floor(Math.random() * 4) + 2;
-		        var vx = Math.random() * 2 - 1;
-		        var vy = Math.random() * 2 - 1;
+		    for (var i = 0; i < 1; i++) {
+		        var radius = Math.floor(Math.random() * 150) + 25;
+		        var vx = (Math.random() * 2 - 1)*2;// -1 - 1
+		        var vy = (Math.random() * 2 - 1)*2;//-1 - 1
 		        var spawnFrame = frame;
-		        var rgb = colorArray[Math.floor(Math.random() * colorArray.length)];
 		        var life = 100;
-		        circleArray.push(new Circle(mouse.x, mouse.y, radius, vx, vy, rgb, 1, spawnFrame, life));
-		 
+		        var rotateA = (Math.random()*1.8 + 0.1)*Math.PI; // (0.2 - 1.0)PI
+		        var rotateV = rotateA  / life // 一帧旋转的角度
+		        var dirction = Math.random();
+		        var vd = Math.random();
+		        if((dirction - vd) > 0){
+		        	dirction = 1;
+		        }else{
+		        	dirction = -1;
+		        }
+		        var theSeason = season;
+		        console.log(season);
+		        //circleArray.push(new Circle(mouse.x, mouse.y, radius, vx, vy, rgb, 1, spawnFrame, life));
+		        circleArray.push(new images(mouse.x, mouse.y, radius, vx, vy, 1, spawnFrame, life, rotateV,dirction,theSeason));
 		    }
 		}
 		 
@@ -102,6 +137,7 @@ window.addEventListener('mousemove',
 		 
 		initCanvas();
 		animate();
+		
 
 });	
 

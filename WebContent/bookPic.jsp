@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="tags.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,6 +11,20 @@
 <script src="${path }/outerjs/mouse.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
+	window.season = "0";
+	window.springImg = new Image();
+	window.summerImg = new Image();
+	window.autumnImg = new Image();
+	window.winterImg = new Image();
+	springImg.src="images/spring.png";
+	summerImg.src="images/summer.png";
+	autumnImg.src="images/autumn.png";
+	winterImg.src="images/winter.png";
+	var springStartIndex = 0;
+	var summerStartIndex = 4  ;
+	var autumnStartIndex = 8;
+	var winterStartIndex = 12;
+	
 	function addPage(page, book) {
 		var element = $('<div />', {});
 		if (book.turn('addPage', element, page)) {
@@ -37,6 +51,15 @@ $(function(){
 
 	}
 	
+	function moveWithSlider(){
+		$("slider").on("slide",function(slideEvt){
+			var positon = sliderEvt.value;
+			$(".flipbook").turn("page",positon);
+		})
+		
+	}
+	
+	window.test = 0;
 	function loadApp() {
 		// Create the flipbook
 		
@@ -54,7 +77,41 @@ $(function(){
 				autoCenter: true,
 				pages:18,
 				when:{
-					
+					end: function(event,pageobject,turned) {
+						var book = $(this);
+						//var pageNum = pageobject.page;
+						if(test == 0){
+							var pageNum = pageobject.page;
+							console.log("pageNum = " + pageNum);
+							console.log("book " + book.turn("page"));
+						}
+						test++;
+						if(test == 3) test = 0;
+						switch (pageNum - 1){
+						case springStartIndex:
+							season = "0"
+							break;
+						case summerStartIndex + 1:
+							season = "0"
+							break;	
+						case summerStartIndex:
+							season = "1"
+							break;
+						case autumnStartIndex + 1:
+							season = "1"
+							break;
+						case autumnStartIndex:
+							season = "2"
+							break;
+						case winterStartIndex + 1:
+							season = "2"
+							break;
+						case winterStartIndex:
+							season = "3"
+							break;
+						}
+						book.turn('center');
+					},
 					missing: function (e, pages) {
 						for (var i = 0; i < pages.length; i++)
 							addPage(pages[i], $(this));
@@ -82,9 +139,7 @@ $(function(){
 			break;
 		}
 	});
-
-
-	
+	moveWithSlider();
 })
 </script>
 </head>
@@ -177,8 +232,14 @@ $(function(){
 	-o-background-position:-1413px 0;
 }
 	
+#slider{
+	width: 80px;
+	height: 40px;
+	Z-index:500;
+}	
 </style>
-
+<!-- <input id="slider" type="text" data-slider-id="slider" data-slider-min="0" data-slider-max="20" 
+data-slider-step="1" data-slider-value="18"/> -->
 <body>
 
 <div class="flipbook-viewport">
@@ -188,9 +249,10 @@ $(function(){
 			<div class="hard p2"></div>
 			<div class="hard p17"></div>
 			<div class="hard p18"></div>
-		</div>
 	</div>
 </div>
+
 <canvas id="mouseCanvas"></canvas>
+<script src="${path}/outerjs/mouse.js" type="text/javascript"></script>
 </body>
 </html>
