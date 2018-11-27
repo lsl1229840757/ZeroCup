@@ -11,20 +11,12 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-
 <title>注册</title>
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-
-<script type="text/javascript" src="myjs/validate.js"></script>
-<script type="text/javascript" src="myjs/MD5.js"></script>
-<link rel="stylesheet" href="mycss/regist.css">
+<script type="text/javascript" src="${path }/myjs/validate.js"></script>
+<script type="text/javascript" src="${path }/myjs/MD5.js"></script>
+<link rel="stylesheet" href="${path }/mycss/regist.css">
 </head>
 <body>
-	<canvas id="canvas"></canvas>
 	<div class="register-container container">
 		<div class="row">
 			<div class="register span6">
@@ -112,7 +104,7 @@
 	</div>
 
 	<!-- Javascript -->
-	<script type="text/javascript" src="myjs/regist.js"></script>
+	<script type="text/javascript" src="${path }/myjs/regist.js"></script>
 </body>
 
 </html>
