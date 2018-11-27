@@ -72,10 +72,10 @@ require([
        	// 初始化所有poi
        	ajax_showAllPois();
     
-       	view.on("click",function(e){
+     /* view.on("click",function(e){
         console.log(e.mapPoint.latitude);
         console.log(e.mapPoint.longitude)
-       	   });
+       	   });*/
        	
        	
        	/**

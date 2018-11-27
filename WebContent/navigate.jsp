@@ -19,8 +19,10 @@
 <script type="text/javascript">
 	$(function() {
 		var user = "${sessionScope.user}";
-		if(user!=null){
+		if(user!=""){
 			$("#login").hide();
+		}else{
+			$("#login").show();
 		}
 		var locale = "${sessionScope.WW_TRANS_I18N_LOCALE}"
 		if (locale == 'en_US') {
