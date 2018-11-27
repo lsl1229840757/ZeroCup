@@ -1,15 +1,41 @@
-.esri-view-width-medium .esri-popup__main-container{
-	width:600px;
-	height:500px;
+@font-face {
+	font-family: "navFont";
+	src: url(../font/navFont.otf);
+}
+
+@font-face {
+	font-family: "desFont";
+	src: url(../font/雲書法一駿山石水墨繁.ttf);
+}
+
+@font-face {
+	font-family: "persFont";
+	src: url(../font/李旭科书法1.4.ttf);
+}
+
+.esri-popup__content {
+	font-family: navFont;
+}
+
+.esri-view-width-medium .esri-popup__main-container {
+	width: 600px;
+	height: 500px;
 	max-height: 1000px;
 }
 
-#back{
-	position:absolute;
-	margin-left:90%;
-	z-index:1;
+.esri-widget__table tr th {
+	text-align: center;
+	font-size: 20px;
+	font-family: persFont;
 }
 
-#viewDiv{
-	z-index : -1;
+#back {
+	position: absolute;
+	margin-left: 90%;
+	z-index: 1;
+	font-family: persFont;
+}
+
+#viewDiv {
+	z-index: -1;
 }

@@ -2,12 +2,15 @@ package com.zcup.action;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
 
 import com.opensymphony.xwork2.ActionContext;
+
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.SessionFactory;
 import com.zcup.model.Note;
 import com.zcup.model.Poi;
@@ -120,7 +123,6 @@ public class PoiAction extends HttpBaseAction {
 			JSONObject jb = array.getJSONObject(i); // 获得每一个poiJSon
 			Set<Note> notes = list.get(i).getNotes();
 			JSONArray array2 = JsonUtils.convert2JSONArray(notes, new String[] { "user", "poi" }); // 考虑安全问题以及循环问题排除user属性
-																									// ,暂时不需要poi的相关信息
 			// 组装Note对象,将user替换为name
 			for (int j = 0; j < array2.size(); j++) {
 				JSONObject jsonObject = array2.getJSONObject(j);

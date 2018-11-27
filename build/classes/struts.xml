@@ -15,20 +15,20 @@
 			<result name="error">/error.jsp</result>
 		</global-results>
 		<!-- 配置跳转页面 -->
-		<action name="homePage">
+		<action name="homePage" class="i18nAction" method="changeLocale">
 			<result name="success">../navigate.jsp</result>
 			<result name="input">../login.jsp</result>
 			<result name="error">../login.jsp</result>
 		</action>
 		<!-- 注册页面的访问 -->
-		<action name="RegisterPage" class="userAction"
-			method="enterRegist">
+		<action name="RegisterPage" class="i18nAction"
+			method="changeLocale">
 			<result name="success">/regist.jsp</result>
 		</action>
 
 		<!-- 登录页面的访问 -->
-		<action name="LoginPage" class="userAction"
-			method="enterLogin">
+		<action name="LoginPage" class="i18nAction"
+			method="changeLocale">
 			<result name="success">/login.jsp</result>
 		</action>
 		<!-- 用户登陆action -->
@@ -83,14 +83,6 @@
 		</action>
 	</package>
 	<package name="root" extends="struts-default" namespace="/">
-		<action name="i18n" class="i18nTestAction"
-			method="changeContext">
-			<result name="success">/i18nTest.jsp</result>
-		</action>
-		<action name="i18n2" class="i18nTestAction"
-			method="changeContext">
-			<result name="success">/i18nTest2.jsp</result>
-		</action>
 		<action name="ajax_*_*" class="{1}Action" method="ajax_{2}"> <!-- 1:showAllPoi方法 -->
 		</action>
 	</package>

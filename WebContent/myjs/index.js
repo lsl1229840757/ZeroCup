@@ -17,4 +17,9 @@ function pointerScroll(ele) {
 		left : totalelement + parentScroll
 	})
 }
+//调整速度和位置
+$('#spring').parallax("50%", 0.2);
+$('#summer').parallax("50%", 0.2);
+$('#autumn').parallax("50%", 0.4);
+$('#winter').parallax("50%", 0.4);
 

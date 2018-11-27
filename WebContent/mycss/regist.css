@@ -1,18 +1,18 @@
 body {
     text-align: left;
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
+	background: url(../testImage/login2.jpg) no-repeat center;
 }
 strong { font-weight: 700; }
-.red { color: #eb4141; }
+.red { color: white; }
 a:hover { text-decoration: none; }
 .logo h1 {
     padding-left: 50px;
-    font-family: 'Oleo Script', cursive;
     font-size: 36px;
     font-weight: 400;
    	text-align:center;
+   	font-family: persFont;
    
 }
 .logo h1 a { color: white; }
@@ -37,6 +37,7 @@ a:hover { text-decoration: none; }
     -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
     box-shadow: 0 1px 5px 0 rgba(0,0,0,.5);
     text-align: center;
+    
 }
 
 .register form h2 {
@@ -46,9 +47,11 @@ a:hover { text-decoration: none; }
     font-size: 30px;
     font-weight: 400;
     text-align: center;
+    font-family: navFont;
 }
 .login{
 	margin-right: 30px;
+	
 }
 .register form input {
     width: 440px;
@@ -60,6 +63,7 @@ a:hover { text-decoration: none; }
 	height: 40px;
 	align:center;
 	margin-left:20px;
+	font-family: navFont;
 	
 }
 
@@ -92,7 +96,6 @@ a:hover { text-decoration: none; }
 
 
 
-/*ÓÃÓÚĞŞÊÎÃÜÂëÇ¿¶ÈÌõÍâ±ß¿òdiv*/
 .pwdStrongth {
 	border: 1px solid hsla(0, 0%, 100%, 1);
 	border-radius: 5px;
@@ -100,7 +103,6 @@ a:hover { text-decoration: none; }
 	width: 200px;
 	margin-left: 15px;
 }
-/*ÓÃÓÚÉèÖÃspan±êÇ©µÄ³õÊ¼ÑùÊ½*/
 .cinnerprogress {
 	display: block;
 	height: 100%;
@@ -108,7 +110,6 @@ a:hover { text-decoration: none; }
 	border-radius: 5px;
 	width: 100%;
 }
-/*ÏÂÃæËÄ¸ö½«ÓÃÓÚÉèÖÃspan±êÇ©ÔÚ²»Í¬ÃÜÂëÇ¿¶ÈµÄÑùÊ½*/
 .strengthLv1 {
 	display: block;
 	height: 100%;
@@ -142,7 +143,7 @@ a:hover { text-decoration: none; }
 }
 
 .error_sty {
-	color: #ff5b5b;
+	color: #f3c3c3;
 	font-size: 14px;
 	line-height: 18px;
 	overflow: hidden;
@@ -150,4 +151,19 @@ a:hover { text-decoration: none; }
 	text-align: left;
 	bottom: 0;
 	margin-left: 20px;
+	font-family: navFont;
+}
+
+@font-face {
+	font-family: "navFont";
+	src: url(../font/navFont.otf);
+}
+@font-face {
+	font-family: "desFont";
+	src: url(../font/é›²æ›¸æ³•ä¸€é§¿å±±çŸ³æ°´å¢¨ç¹.ttf);
+}
+
+@font-face {
+	font-family: "persFont";
+	src: url(../font/ææ—­ç§‘ä¹¦æ³•1.4.ttf);
 }

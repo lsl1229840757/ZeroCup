@@ -17,6 +17,7 @@ html, body, #viewDiv {
     width: 100%;
  }
  #danmu{
+	 height:35px;
 	position: absolute;
   font-size: 30px;
   right: 0;
@@ -39,8 +40,10 @@ html, body, #viewDiv {
 <title>地图</title>
 </head>
 <body>
-<button id="back" class='btn btn-primary btn-lg'>回到武大</button>
-<div id="danmu"></div>
+<button id="back" class='btn btn-primary btn-lg'><s:text name="goBack"></s:text></button>
+<div id="danmu">
+	<span id = "dan"></span>
+</div>
 <div id="viewDiv" class="right"></div>
 </body>
 </html>
