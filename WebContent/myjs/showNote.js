@@ -1,4 +1,3 @@
-var colorarray = [[0,0,0,1]]
 function formatDate(time,format='YY-MM-DD hh:mm'){
     var date = new Date(time);
 
@@ -73,6 +72,12 @@ require([
        	// 初始化所有poi
        	ajax_showAllPois();
     
+       	view.on("click",function(e){
+        console.log(e.mapPoint.latitude);
+        console.log(e.mapPoint.longitude)
+       	   });
+       	
+       	
        	/**
 		 * 
 		 * 定义一些函数
@@ -85,7 +90,7 @@ require([
     		        x: poi.longitude,
     		        y: poi.latitude,
     		      };
-    			var col =  colorarray[Math.floor(Math.random()*11)];
+    			var col =  "#2791ff";
     		    var markerSymbol = {
     		    	// 这里以后设置大小
     		        type: "simple-marker", 
@@ -94,7 +99,7 @@ require([
     		          color:col,
     		          width: 0.1
     		        },
-					size:Math.random()*15+5// 15-30
+					size:15// 15-30
     		      };
 
     		      // 类似于Map
@@ -191,12 +196,11 @@ require([
     	  				showPoi(data[i]);
     	  			}
     	  			
-    	  		 /*
+    	  			/*
 					 * //给template添加事件 var popup = view.popup;
 					 * popup.on("trigger-action", function(event) { if
 					 * (event.action.id === "goIt") { } });
 					 */
-				 
     	  		},
     	  		error : function(a) {
     	  			alert("error");
