@@ -66,10 +66,10 @@
 		/* $("ul li:eq(2)").click(function() {
 			window.open('${path }/pict/ImagePage', '_blank');
 		}) */
-		$("ul li:eq(3)").click(function() {
+		$("ul li:eq(4)").click(function() {
 			window.open('${path }/pict/mapPage', '_blank');
 		})
-		$("ul li:eq(4)").click(function() {
+		$("ul li:eq(5)").click(function() {
 			window.open('${path }/pict/LoginPage', '_blank');
 		})
 		//图片数组
@@ -119,11 +119,12 @@
 		<nav class="navbar navbar-default navbar-fixed-top">
 		<div id="navMenu">
 			<div id="navMenu-wrapper">
-				<div id="logo">
-					<h1>珞珈印象</h1>
-				</div>
+				<!-- <div id="logo">
+					<h1></h1>
+				</div> -->
 				<ul id="navMenu-items">
 					<div id="menuSelector"></div>
+					<li class="logo">珞珈印象</li>
 					<li class="navMenu-item"><span class="subtitle active"><s:text
 								name="the_four_seasons"></s:text></span></li>
 					<li class="navMenu-item"><span class="subtitle"><s:text
@@ -237,21 +238,16 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-sm-4 col-md-11">
-							<img src="${path }/scienceImage/literature4.jpg" alt="..."
-								class="img-responsive img-thumbnail literature">
-						</div>
-					</div>
-					<div class='row'>
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/literature2.jpg" alt="..."
-								class="img-responsive img-thumbnail literature">
-						</div>
 						<div class="col-sm-4 col-md-6">
 							<img src="${path }/scienceImage/literature.jpg" alt="..."
-								class="img-responsive img-thumbnail literature">
+								class="img-responsive img-thumbnail">
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<img src="${path }/scienceImage/literature5.jpg" alt="..."
+								class="img-responsive img-thumbnail">
 						</div>
 					</div>
+					
 				</div>
 			</div>
 
@@ -290,15 +286,15 @@
 				</div>
 				<div class="panel-body">
 					<div class='row'>
-						<div class="col-sm-4 col-md-6 sciences" style="margin-top: 3%;">
+						<div class="col-sm-6 col-md-6 sciences">
 							<img src="${path }/scienceImage/science4.png" alt="..."
-								class="img-responsive img-thumbnail law">
+								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-6 sciences">
+						<div class="col-sm-6 col-md-6 sciences">
 							<img src="${path }/scienceImage/science5.jpg" alt="..."
 								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-6 sciences">
+						<div class="col-sm-6 col-md-6 sciences">
 							<img src="${path }/scienceImage/science3.jpg" alt="..."
 								class="img-responsive img-thumbnail">
 						</div>
@@ -315,16 +311,16 @@
 				</div>
 				<div class="panel-body">
 					<div class='row'>
-						<div class="col-sm-4 col-md-6 law" style="margin-top: 3%;">
+						<div class="col-sm-6 col-md-6">
 							<img src="${path }/scienceImage/engineer5.jpg" alt="..."
-								class="img-responsive img-thumbnail law">
+								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-6 law">
+						<div class="col-sm-6 col-md-6">
 							<img src="${path }/scienceImage/engineer2.png" alt="..."
 								class="img-responsive img-thumbnail">
 						</div>
-						<div class="col-sm-4 col-md-6 law">
-							<img src="${path }/scienceImage/engineer4.jpg" alt="..."
+						<div class="col-sm-6 col-md-6">
+							<img src="${path }/scienceImage/engine4.jpg" alt="..."
 								class="img-responsive img-thumbnail">
 						</div>
 					</div>
@@ -361,15 +357,15 @@
 				<div class="panel-body">
 					<div class='row'>
 						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/hospital2.jpg" alt="..."
+							<img src="${path }/scienceImage/hospital4.jpg" alt="..."
 								class="img-responsive img-thumbnail law">
 						</div>
 						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/hospital.png" alt="..."
+							<img src="${path }/scienceImage/hospital3.jpg" alt="..."
 								class="img-responsive img-thumbnail">
 						</div>
 						<div class="col-sm-4 col-md-6" style="margin-top: 2%;">
-							<img src="${path }/scienceImage/hospital3.jpg" alt="..."
+							<img src="${path }/scienceImage/hospital.png" alt="..."
 								class="img-responsive img-thumbnail">
 						</div>
 					</div>

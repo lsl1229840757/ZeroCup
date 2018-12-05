@@ -36,8 +36,8 @@ public class NoteServiceImpl extends BaseServiceImpl<Note, NoteQuery> implements
 		note.setContent(content);
 		Poi poi = poiDao.getObjById(poiId);
 		note.setUser(user);
-		user.getNotes().add(note);
-		poi.getNotes().add(note); //这里便会级联更新
+		note.setPoi(poi);
+		noteDao.saveObj(note);
 	}
 	
 }

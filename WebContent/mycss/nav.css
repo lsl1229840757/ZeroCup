@@ -28,31 +28,26 @@
 #navMenu {
 	margin-bottom: 3px;
 	position: relative;
-	margin-left: 10%;
+	margin-left: 5%;
 }
 
 /* .header{
 	overflow: hidden;
 } */
-#logo {
+.logo {
 	/* width: 15%; */
-	float: left;
 	/* margin-top: 10px; */
-}
-
-#logo h1{
 	font-family: persFont;
-	font-size: 50px;
-	margin-top: 10px;
+	font-size: 45px;
 	color: #fcc339;
 }
+
 /* #logo img {
 	max-width: 100%;
 	height: auto;
 }
  */
 #navMenu #navMenu-wrapper {
-	height: 60px;
 	padding: 0 30px;
 }
 
@@ -63,7 +58,6 @@
 	white-space: nowrap;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
-	width: 85%;
 }
 
 #menuSelector {
@@ -79,7 +73,7 @@
 
 #navMenu ul li {
 	display: inline-block;
-	margin: 16px 40px;
+	margin: 0px 40px;
 	margin-left: 3%;
 }
 
