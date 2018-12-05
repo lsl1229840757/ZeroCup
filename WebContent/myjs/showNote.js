@@ -252,7 +252,7 @@ function ajax_addNote(layer,showPoi,btn){
 			// 发射弹幕
 		    var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
 		    $("#danmu").css({"color":"#"+randomColor});
-		    $("#danmu").html(str);
+		    $("#danmu").html("<span>"+str+"</span>");
 		    $("#danmu").animate({left:-pWidth},10000,function(){
 		        $(this).html('');
 		        $(this).css('left',pWidth);

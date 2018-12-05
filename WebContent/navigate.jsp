@@ -113,6 +113,70 @@
 		})
 	})
 </script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript">
+$(function(){
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+var option = null;
+myChart.showLoading();
+$.getJSON(path+'/data/test.json', function (json) {
+	//alert(json["nodes"]);
+    myChart.hideLoading();
+    myChart.setOption(option = {
+        title: {
+            text: 'NPM Dependencies'
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series : [
+            {
+                type: 'graph',
+                layout: 'none',
+                // progressiveThreshold: 700,
+                data: json.nodes.map(function (node) {
+                    return {
+                        x: node.x,
+                        y: node.y,
+                        id: node.id,
+                        name: node.label,
+                        symbolSize: node.size,
+                        itemStyle: {
+                            normal: {
+                                color: node.color
+                            }
+                        }
+                    };
+                }),
+                edges: json.edges.map(function (edge) {
+                    return {
+                        source: edge.sourceID,
+                        target: edge.targetID
+                    };
+                }),
+                label: {
+                    emphasis: {
+                        position: 'right',
+                        show: true
+                    }
+                },
+                roam: true,
+                focusNodeAdjacency: true,
+                lineStyle: {
+                    normal: {
+                        width: 0.5,
+                        curveness: 0.3,
+                        opacity: 0.7
+                    }
+                }
+            }
+        ]
+    }, true);
+});
+});
+</script>
+
 </head>
 <body>
 	<div class="container-fluid">
@@ -221,153 +285,6 @@
 						<h2 class='text-danger'>冬天的珞珈</h2>
 						<h2>一声画角谯门，半庭新月黄昏，雪里山前水滨</h2>
 						<b><footer>-- 元代<cite title="Source Title">白朴</cite></footer></b>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="science" style="display: none">
-			<div class="page-header">
-				<b><h1 class='text-success'>文法理工农医</h1></b>
-			</div>
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-primary'>文</h2>
-						<h2 class='text-warning'>“步过春光，醉老西窗” 才知人间已荒</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/literature.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/literature5.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-					
-				</div>
-			</div>
-
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>法</h2>
-						<h2>无念为之本，一念为之意，二念为之德，三念为之法</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-4 col-md-6 law" style="margin-top: 7%;">
-							<img src="${path }/scienceImage/law4.jpg" alt="..."
-								class="img-responsive img-thumbnail law">
-						</div>
-						<div class="col-sm-4 col-md-6 law">
-							<img src="${path }/scienceImage/law.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-4 col-md-6 law">
-							<img src="${path }/scienceImage/law3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="panel panel-warning">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>理</h2>
-						<h2>在我看来这时间的美丽有两种，一是深刻又动人的方程</h2>
-						<h2>一是你泛着倦意淡淡的笑容</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-6 col-md-6 sciences">
-							<img src="${path }/scienceImage/science4.png" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6 sciences">
-							<img src="${path }/scienceImage/science5.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6 sciences">
-							<img src="${path }/scienceImage/science3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="panel panel-danger">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>工</h2>
-						<h2>“工匠精神”代表着一个时代的气质</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-6 col-md-6">
-							<img src="${path }/scienceImage/engineer5.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<img src="${path }/scienceImage/engineer2.png" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<img src="${path }/scienceImage/engine4.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-warning">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>农</h2>
-						<h2>农业的要素也就是构成宇宙的要素：水、土、空气和阳光</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-4 col-md-9" style="margin-left: 15%;">
-							<img src="${path }/scienceImage/agriculture2.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-
-						<div class="col-sm-4 col-md-9" style="margin-left: 15%;">
-							<img src="${path }/scienceImage/agriculture3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>医</h2>
-						<h2>有时是治愈，常常是安慰，总是去帮助</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/hospital4.jpg" alt="..."
-								class="img-responsive img-thumbnail law">
-						</div>
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/hospital3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-4 col-md-6" style="margin-top: 2%;">
-							<img src="${path }/scienceImage/hospital.png" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
 					</div>
 				</div>
 			</div>
