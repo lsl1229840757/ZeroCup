@@ -159,7 +159,6 @@
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
 					<img src="" alt="..." align="center">
-					<!-- 添加描述信息 -->
 				</div>
 				<div class="item">
 					<img src="" alt="..." align="center">
@@ -229,148 +228,8 @@
 			<div class="page-header">
 				<b><h1 class='text-success'>文法理工农医</h1></b>
 			</div>
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-primary'>文</h2>
-						<h2 class='text-warning'>“步过春光，醉老西窗” 才知人间已荒</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/literature.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/literature5.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-					
-				</div>
-			</div>
-
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>法</h2>
-						<h2>无念为之本，一念为之意，二念为之德，三念为之法</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-4 col-md-6 law" style="margin-top: 7%;">
-							<img src="${path }/scienceImage/law4.jpg" alt="..."
-								class="img-responsive img-thumbnail law">
-						</div>
-						<div class="col-sm-4 col-md-6 law">
-							<img src="${path }/scienceImage/law.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-4 col-md-6 law">
-							<img src="${path }/scienceImage/law3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="panel panel-warning">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>理</h2>
-						<h2>在我看来这时间的美丽有两种，一是深刻又动人的方程</h2>
-						<h2>一是你泛着倦意淡淡的笑容</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-6 col-md-6 sciences">
-							<img src="${path }/scienceImage/science4.png" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6 sciences">
-							<img src="${path }/scienceImage/science5.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6 sciences">
-							<img src="${path }/scienceImage/science3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="panel panel-danger">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>工</h2>
-						<h2>“工匠精神”代表着一个时代的气质</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-6 col-md-6">
-							<img src="${path }/scienceImage/engineer5.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<img src="${path }/scienceImage/engineer2.png" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<img src="${path }/scienceImage/engine4.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-warning">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>农</h2>
-						<h2>农业的要素也就是构成宇宙的要素：水、土、空气和阳光</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-4 col-md-9" style="margin-left: 15%;">
-							<img src="${path }/scienceImage/agriculture2.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-
-						<div class="col-sm-4 col-md-9" style="margin-left: 15%;">
-							<img src="${path }/scienceImage/agriculture3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<blockquote>
-						<h2 class='text-info'>医</h2>
-						<h2>有时是治愈，常常是安慰，总是去帮助</h2>
-					</blockquote>
-				</div>
-				<div class="panel-body">
-					<div class='row'>
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/hospital4.jpg" alt="..."
-								class="img-responsive img-thumbnail law">
-						</div>
-						<div class="col-sm-4 col-md-6">
-							<img src="${path }/scienceImage/hospital3.jpg" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-						<div class="col-sm-4 col-md-6" style="margin-top: 2%;">
-							<img src="${path }/scienceImage/hospital.png" alt="..."
-								class="img-responsive img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
+			
+			<div id="graph"></div>	
 		</div>
 		<div class="embed-responsive embed-responsive-16by9"
 			style="display: none; background-color: transparent;">

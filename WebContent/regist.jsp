@@ -50,7 +50,7 @@
 					</div>
 					<div class="form-group has-feedback">
 						<div style="width: 15px; margin-left: 20px;">
-							<select name="gender" id="gender">
+							<select name="gender" id="gender" class="btn btn-default">
 								<option value="男"><s:text name="gender1"></s:text>
 								<option value="女"><s:text name="gender2"></s:text>
 							</select>
