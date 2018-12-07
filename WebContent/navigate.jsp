@@ -77,11 +77,8 @@
 				[ path + '/seasonImage/slide5.jpeg',
 						path + '/seasonImage/slide3.png',
 						path + '/seasonImage/slide4.png',
-						path + '/seasonImage/autumn2.png' ],
-				[ path + '/scienceImage/science.jpg',
-						path + '/scienceImage/math2.jpg',
-						path + '/scienceImage/science2.png',
-						path + '/scienceImage/math4.jpg' ] ];
+						path + '/seasonImage/autumn2.png' ]
+				];
 		$('.carousel-inner img').each(function(i) {
 			$(this).attr('src', array[0][i]);
 		});
@@ -96,14 +93,11 @@
 				$(".embed-responsive").css('display', 'none');
 				$("#carousel-generic").css('display','block');
 			} else if (index == 1) {
-				$('.carousel-inner img').each(function(i) {
-					$(this).attr('src', array[1][i]);
-				})
 				//切换展示主题
 				$(".science").css('display', 'block');
 				$(".seasons").css('display', 'none');
 				$(".embed-responsive").css('display', 'none');
-				$("#carousel-generic").css('display','block');
+				$("#carousel-generic").css('display','none');
 			} else if (index == 2) {
 				$(".science").css('display', 'none');
 				$(".seasons").css('display', 'none');
