@@ -223,7 +223,6 @@ $.getJSON(path+'/data/test.json', function (json) {
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
 					<img src="" alt="..." align="center">
-					<!-- 添加描述信息 -->
 				</div>
 				<div class="item">
 					<img src="" alt="..." align="center">
@@ -288,6 +287,13 @@ $.getJSON(path+'/data/test.json', function (json) {
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="science" style="display: none">
+			<div class="page-header">
+				<b><h1 class='text-success'>文法理工农医</h1></b>
+			</div>
+			
+			<div id="graph"></div>	
 		</div>
 		<div class="embed-responsive embed-responsive-16by9"
 			style="display: none; background-color: transparent;">
