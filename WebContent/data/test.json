@@ -1,7 +1,7 @@
 {
 	"nodes": [
 		{
-			"color": "#4f19c7",
+			"color": "#ea4335",
 			"label": "文",
 			"attributes": {
 				
@@ -12,7 +12,7 @@
 			"size": 100
 		},
 		{
-			"color": "#c71969",
+			"color": "#4285f4",
 			"label": "法",
 			"attributes": {
 				
@@ -23,7 +23,7 @@
 			"size": 100
 		},
 		{
-			"color": "#c71969",
+			"color": "#fbbc05",
 			"label": "理",
 			"attributes": {
 				
@@ -34,73 +34,7 @@
 			"size": 100.0
 		},
 		{
-			"color": "#c71969",
-			"label": "数学类",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "science-1",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "信息与计算科学",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "science-2",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "生物科学",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "science-3",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "地理信息科学",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "science-4",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "心理学",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "science-5",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "物理学类",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "science-6",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
+			"color": "#34a853",
 			"label": "工",
 			"attributes": {
 				
@@ -111,73 +45,7 @@
 			"size": 100
 		},
 		{
-			"color": "#c71969",
-			"label": "工程力学",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "factory-1",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "机械类",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "factory-2",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "轻工类",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "factory-3",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "建筑类",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "factory-4",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "测绘工程",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "factory-5",
-			"size": 100
-		},
-		{
-			"color": "#c71969",
-			"label": "软件工程",
-			"attributes": {
-				
-			},
-			"y": 630.50604,
-			"x": -55.53079,
-			"id": "factory-6",
-			"size": 100
-		},
-		{
-			"color": "#c71919",
+			"color": "#cd3ab4",
 			"label": "农",
 			"attributes": {
 				
@@ -187,69 +55,8 @@
 			"id": "agriculture",
 			"size": 100
 		},
-			{
-			"color": "#c71919",
-			"label": "农学",
-			"attributes": {
-				
-			},
-			"y": 120.37976,
-			"x": -710.59204,
-			"id": "agriculture-1",
-			"size": 100
-		},	{
-			"color": "#c71919",
-			"label": "农学",
-			"attributes": {
-				
-			},
-			"y": 120.37976,
-			"x": -710.59204,
-			"id": "agriculture-2",
-			"size": 100
-		},	{
-			"color": "#c71919",
-			"label": "农学",
-			"attributes": {
-				
-			},
-			"y": 120.37976,
-			"x": -710.59204,
-			"id": "agriculture-3",
-			"size": 100
-		},	{
-			"color": "#c71919",
-			"label": "农学",
-			"attributes": {
-				
-			},
-			"y": 120.37976,
-			"x": -710.59204,
-			"id": "agriculture-4",
-			"size": 100
-		},	{
-			"color": "#c71919",
-			"label": "农学",
-			"attributes": {
-				
-			},
-			"y": 120.37976,
-			"x": -710.59204,
-			"id": "agriculture-5",
-			"size": 100
-		},	{
-			"color": "#c71919",
-			"label": "农学",
-			"attributes": {
-				
-			},
-			"y": 100.37976,
-			"x": -710.59204,
-			"id": "agriculture-6",
-			"size": 100
-		},
 		{
-			"color": "#c71969",
+			"color": "#903cff",
 			"label": "医",
 			"attributes": {
 				
@@ -260,15 +67,335 @@
 			"size": 100
 		},
 		{
+			"color": "#ea4335",
+			"label": "中国语言文学类",
+			"attributes": {
+				
+			},
+			"y": -300.26147,
+			"x": -500.36383,
+			"id": "zhongguoyuyanwenxue",
+			"size": 20
+		},{
+			"color": "#4285f4",
+			"label": "英语",
+			"attributes": {
+								
+			},
+			"y": -300.26147,
+			"x": -1000.36383,
+			"id": "english",
+			"size": 20
+		},{
+			"color": "#fbbc05",
+			"label": "俄语 ",
+			"attributes": {
+								
+			},
+			"y": -500.26147,
+			"x": -1000.36383,
+			"id": "russian",
+			"size": 20
+		},{
+			"color": "#ea4335",
+			"label": "德语 ",
+			"attributes": {
+								
+			},
+			"y": -500.26147,
+			"x":  -500.36383,
+			"id": "german",
+			"size": 20
+		}
+		,{
+			"color": "#fbbc05",
+			"label": "法语 ",
+			"attributes": {
+								
+			},
+			"y": -150.26147,
+			"x":   -739.36383,
+			"id": "french",
+			"size": 20
+		},{
 			"color": "#c71969",
+			"label": "日语  ",
+			"attributes": {
+								
+			},
+			"y": -600.26147,
+			"x":  -739.36383,
+			"id": "jpanese",
+			"size": 20
+		},{
+			"color": "#c71969",
+			"label": "法学",
+			"attributes": {
+				
+			},
+			"y": -30.37976,
+			"x": 800,
+			"id": "law-1",
+			"size": 20
+		}
+		,{
+			"color": "#4285f4",
+			"label": "政治学类",
+			"attributes": {
+				
+			},
+			"y": 270.37976,
+			"x": 800,
+			"id": "law-2",
+			"size": 20
+		}
+		,{
+			"color": "#c71969",
+			"label": "社会学类",
+			"attributes": {
+				
+			},
+			"y": -30.37976,
+			"x": 400,
+			"id": "law-3",
+			"size": 20
+		}
+		,{
+			"color": "#ea4335",
+			"label": "思想政治教育",
+			"attributes": {
+				
+			},
+			"y": -80,
+			"x": 600,
+			"id": "law-4",
+			"size": 20
+		}
+		,{
+			"color": "#4285f4",
+			"label": "监狱学",
+			"attributes": {
+				
+			},
+			"y": 320,
+			"x": 600,
+			"id": "law-5",
+			"size": 20
+		}
+		,{
+			"color": "#fbbc05",
+			"label": "知识产权",
+			"attributes": {
+				
+			},
+			"y": 270.37976,
+			"x":400,
+			"id": "law-6",
+			"size": 20
+		},
+		{
+			"color": "#c71969",
+			"label": "数学类",
+			"attributes": {
+				
+			},
+			"y": -20.50604,
+			"x": -55.53079,
+			"id": "science-1",
+			"size": 20
+		},
+		{
+			"color": "#4285f4",
+			"label": "信息与计算科学",
+			"attributes": {
+				
+			},
+			"y": 60.50604,
+			"x": -55.53079,
+			"id": "science-2",
+			"size": 20
+		},
+		{
+			"color": "#ea4335",
+			"label": "生物科学",
+			"attributes": {
+				
+			},
+			"y":1000.50604,
+			"x": -535.53079,
+			"id": "science-3",
+			"size": 20
+		},
+		{
+			"color": "#4285f4",
+			"label": "地理信息科学",
+			"attributes": {
+				
+			},
+			"y": 200.50604,
+			"x": -55.53079,
+			"id": "science-4",
+			"size": 30
+		},
+		{
+			"color": "#fbbc05",
+			"label": "心理学",
+			"attributes": {
+				
+			},
+			"y": 435.50604,
+			"x": -43.53079,
+			"id": "science-5",
+			"size": 40
+		},
+		{
+			"color": "#c71969",
+			"label": "物理学类",
+			"attributes": {
+				
+			},
+			"y": 630.50604,
+			"x": -100.53079,
+			"id": "science-6",
+			"size": 10
+		},
+		{
+			"color": "#4285f4",
+			"label": "工程力学",
+			"attributes": {
+				
+			},
+			"y": 600.50604,
+			"x": -499.53079,
+			"id": "factory-1",
+			"size": 30
+		},
+		{
+			"color": "#fbbc05",
+			"label": "机械类",
+			"attributes": {
+				
+			},
+			"y": 544,
+			"x": -744,
+			"id": "factory-2",
+			"size":20
+		},
+		{
+			"color": "#c71969",
+			"label": "轻工类",
+			"attributes": {
+				
+			},
+			"y": 400,
+			"x": -388,
+			"id": "factory-3",
+			"size": 50
+		},
+		{
+			"color": "#c71969",
+			"label": "建筑类",
+			"attributes": {
+				
+			},
+			"y": 300,
+			"x": -99,
+			"id": "factory-4",
+			"size":60
+		},
+		{
+			"color": "#4285f4",
+			"label": "测绘工程",
+			"attributes": {
+				
+			},
+			"y": 478,
+			"x": -900,
+			"id": "factory-5",
+			"size": 20
+		},
+		{
+			"color": "#ea4335",
+			"label": "软件工程",
+			"attributes": {
+				
+			},
+			"y": 689,
+			"x": -1000,
+			"id": "factory-6",
+			"size": 30
+		},
+			{
+			"color": "#c71919",
+			"label": "农学",
+			"attributes": {
+				
+			},
+			"y": 338,
+			"x": -1210,
+			"id": "agriculture-1",
+			"size": 20
+		},	{
+			"color": "#34a853",
+			"label": "农学",
+			"attributes": {
+				
+			},
+			"y": 398,
+			"x": -334,
+			"id": "agriculture-2",
+			"size": 40
+		},	{
+			"color": "#c71919",
+			"label": "农学",
+			"attributes": {
+				
+			},
+			"y": 455,
+			"x": -777,
+			"id": "agriculture-3",
+			"size": 32
+		},	{
+			"color": "#c71919",
+			"label": "农学",
+			"attributes": {
+				
+			},
+			"y": 435,
+			"x": -1085,
+			"id": "agriculture-4",
+			"size": 44
+		},	{
+			"color": "#4285f4",
+			"label": "农学",
+			"attributes": {
+				
+			},
+			"y": 345,
+			"x": -766,
+			"id": "agriculture-5",
+			"size": 33
+		},	{
+			"color": "#fbbc05",
+			"label": "农学",
+			"attributes": {
+				
+			},
+			"y": 333,
+			"x": -544,
+			"id": "agriculture-6",
+			"size":22
+		},
+		{
+			"color": "#34a853",
 			"label": "临床医学",
 			"attributes": {
 				
 			},
-			"y": -404.26147,
-			"x": 600.52897,
+			"y": -35,
+			"x": 466,
 			"id": "hosp-1",
-			"size": 1
+			"size": 33
 		},
 		{
 			"color": "#c71969",
@@ -276,58 +403,153 @@
 			"attributes": {
 				
 			},
-			"y": -404.26147,
-			"x": 600.52897,
+			"y": -777,
+			"x": 324,
 			"id": "hosp-2",
-			"size": 1
+			"size": 43
 		},
 		{
-			"color": "#c71969",
+			"color": "#4285f4",
 			"label": "公共卫生与预防医学类",
 			"attributes": {
 				
 			},
-			"y": -404.26147,
-			"x": 600.52897,
+			"y": -23,
+			"x": 975,
 			"id": "hosp-3",
-			"size": 1
+			"size": 54
 		},
 		{
-			"color": "#c71969",
+			"color": "#ea4335",
 			"label": "药学类",
 			"attributes": {
 				
 			},
-			"y": -404.26147,
-			"x": 600.52897,
+			"y": -233,
+			"x": 443,
 			"id": "hosp-4",
-			"size": 1
+			"size": 33
 		},
 		{
-			"color": "#c71969",
+			"color": "#34a853",
 			"label": "医学检验技术",
 			"attributes": {
 				
 			},
-			"y": -404.26147,
-			"x": 600.52897,
+			"y": -343,
+			"x": 900,
 			"id": "hosp-5",
-			"size": 1
+			"size":26
 		},
 		{
-			"color": "#c71969",
+			"color": "#fbbc05",
 			"label": "护理学",
 			"attributes": {
 				
 			},
-			"y": -404.26147,
-			"x": 600.52897,
+			"y": -344,
+			"x": 1230,
 			"id": "hosp-6",
-			"size": 1
+			"size": 54
 		}
-		
 	],
 	"edges": [
+		{
+			"sourceID": "science",
+			"attributes": {
+				
+			},
+			"targetID": "science-6",
+			"size": 1
+		},
+		{
+			"sourceID": "science",
+			"attributes": {
+				
+			},
+			"targetID": "science-5",
+			"size": 1
+		},
+		{
+			"sourceID": "science",
+			"attributes": {
+				
+			},
+			"targetID": "science-4",
+			"size": 1
+		},
+		{
+			"sourceID": "science",
+			"attributes": {
+				
+			},
+			"targetID": "science-3",
+			"size": 1
+		},
+		{
+			"sourceID": "science",
+			"attributes": {
+				
+			},
+			"targetID": "science-2",
+			"size": 1
+		},
+		{
+			"sourceID": "science",
+			"attributes": {
+				
+			},
+			"targetID": "science-1",
+			"size": 1
+		},
+		{
+			"sourceID": "factory",
+			"attributes": {
+				
+			},
+			"targetID": "factory-6",
+			"size": 1
+		},
+		{
+			"sourceID": "factory",
+			"attributes": {
+				
+			},
+			"targetID": "factory-5",
+			"size": 1
+		},
+		{
+			"sourceID": "factory",
+			"attributes": {
+				
+			},
+			"targetID": "factory-4",
+			"size": 1
+		},
+		{
+			"sourceID": "factory",
+			"attributes": {
+				
+			},
+			"targetID": "factory-3",
+			"size": 1
+		},
+		{
+			"sourceID": "factory",
+			"attributes": {
+				
+			},
+			"targetID": "factory-2",
+			"size": 1
+		},
+		{
+			"sourceID": "factory",
+			"attributes": {
+				
+			},
+			"targetID": "factory-1",
+			"size": 1
+		},
 		{
 			"sourceID": "hosp",
 			"attributes": {
@@ -423,6 +645,92 @@
 			},
 			"targetID": "agriculture-6",
 			"size": 1
+		},
+		{
+			"sourceID": "law",
+			"attributes": {
+			},
+			"targetID": "law-6",
+			"size": 1
+		},
+		{
+			"sourceID": "law",
+			"attributes": {
+			},
+			"targetID": "law-5",
+			"size": 1
+		},
+		{
+			"sourceID": "law",
+			"attributes": {
+			},
+			"targetID": "law-4",
+			"size": 1
+		},
+		{
+			"sourceID": "law",
+			"attributes": {
+			},
+			"targetID": "law-3",
+			"size": 1
+		},
+		{
+			"sourceID": "law",
+			"attributes": {
+			},
+			"targetID": "law-2",
+			"size": 1
+		},
+		{
+			"sourceID": "law",
+			"attributes": {
+			},
+			"targetID": "law-1",
+			"size": 1
+		},
+		{
+			"sourceID": "literature",
+			"attributes": {
+			},
+			"targetID": "jpanese",
+			"size": 1
+		},
+		{
+			"sourceID": "literature",
+			"attributes": {
+			},
+			"targetID": "french",
+			"size": 1
+		},
+		{
+			"sourceID": "literature",
+			"attributes": {
+			},
+			"targetID": "german",
+			"size": 1
+		},
+		{
+			"sourceID": "literature",
+			"attributes": {
+			},
+			"targetID": "russian",
+			"size": 1
 		}
-	]
+		,
+		{
+			"sourceID": "literature",
+			"attributes": {
+			},
+			"targetID": "zhongguoyuyanwenxue",
+			"size": 1
+		}
+		,
+		{
+			"sourceID": "literature",
+			"attributes": {
+			},
+			"targetID": "english",
+			"size": 1
+		}
+		]
 }

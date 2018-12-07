@@ -36,7 +36,7 @@ $.getJSON(path+'/data/test.json', function (json) {
     myChart.hideLoading();
     myChart.setOption(option = {
         title: {
-            text: 'NPM Dependencies'
+            text: ''
         },
         animationDurationUpdate: 1500,
         animationEasingUpdate: 'quinticInOut',
